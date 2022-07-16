@@ -16,7 +16,7 @@ class GetProgramsResponse with _$GetProgramsResponse {
 @freezed
 class Program with _$Program {
   factory Program({
-    @JsonKey(name: 'id') required String id,
+    @JsonKey(name: 'id') required int id,
     @JsonKey(name: 'name') required String name,
     @JsonKey(name: 'frequency') required List<int> frequency,
     @JsonKey(name: 'runs') required List<Run> runs,
@@ -29,8 +29,8 @@ class Program with _$Program {
 @freezed
 class Run with _$Run {
   factory Run({
-    @JsonKey(name: 'id') required String id,
-    @JsonKey(name: 'program_id') required String programId,
+    @JsonKey(name: 'id') required int id,
+    @JsonKey(name: 'program_id') required int programId,
     @JsonKey(name: 'zone_id') required int zoneId,
     @JsonKey(name: 'duration_seconds') required int durationSeconds,
     @JsonKey(name: 'start_hour') required int startHour,

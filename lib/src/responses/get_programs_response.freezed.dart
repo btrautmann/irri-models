@@ -165,7 +165,7 @@ Program _$ProgramFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Program {
   @JsonKey(name: 'id')
-  String get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'name')
   String get name => throw _privateConstructorUsedError;
   @JsonKey(name: 'frequency')
@@ -183,7 +183,7 @@ abstract class $ProgramCopyWith<$Res> {
   factory $ProgramCopyWith(Program value, $Res Function(Program) then) =
       _$ProgramCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'id') String id,
+      {@JsonKey(name: 'id') int id,
       @JsonKey(name: 'name') String name,
       @JsonKey(name: 'frequency') List<int> frequency,
       @JsonKey(name: 'runs') List<Run> runs});
@@ -208,7 +208,7 @@ class _$ProgramCopyWithImpl<$Res> implements $ProgramCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -232,7 +232,7 @@ abstract class _$$_ProgramCopyWith<$Res> implements $ProgramCopyWith<$Res> {
       __$$_ProgramCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'id') String id,
+      {@JsonKey(name: 'id') int id,
       @JsonKey(name: 'name') String name,
       @JsonKey(name: 'frequency') List<int> frequency,
       @JsonKey(name: 'runs') List<Run> runs});
@@ -258,7 +258,7 @@ class __$$_ProgramCopyWithImpl<$Res> extends _$ProgramCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -291,7 +291,7 @@ class _$_Program implements _Program {
 
   @override
   @JsonKey(name: 'id')
-  final String id;
+  final int id;
   @override
   @JsonKey(name: 'name')
   final String name;
@@ -350,7 +350,7 @@ class _$_Program implements _Program {
 
 abstract class _Program implements Program {
   factory _Program(
-      {@JsonKey(name: 'id') required final String id,
+      {@JsonKey(name: 'id') required final int id,
       @JsonKey(name: 'name') required final String name,
       @JsonKey(name: 'frequency') required final List<int> frequency,
       @JsonKey(name: 'runs') required final List<Run> runs}) = _$_Program;
@@ -359,7 +359,7 @@ abstract class _Program implements Program {
 
   @override
   @JsonKey(name: 'id')
-  String get id;
+  int get id;
   @override
   @JsonKey(name: 'name')
   String get name;
@@ -382,9 +382,9 @@ Run _$RunFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Run {
   @JsonKey(name: 'id')
-  String get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'program_id')
-  String get programId => throw _privateConstructorUsedError;
+  int get programId => throw _privateConstructorUsedError;
   @JsonKey(name: 'zone_id')
   int get zoneId => throw _privateConstructorUsedError;
   @JsonKey(name: 'duration_seconds')
@@ -404,8 +404,8 @@ abstract class $RunCopyWith<$Res> {
   factory $RunCopyWith(Run value, $Res Function(Run) then) =
       _$RunCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'id') String id,
-      @JsonKey(name: 'program_id') String programId,
+      {@JsonKey(name: 'id') int id,
+      @JsonKey(name: 'program_id') int programId,
       @JsonKey(name: 'zone_id') int zoneId,
       @JsonKey(name: 'duration_seconds') int durationSeconds,
       @JsonKey(name: 'start_hour') int startHour,
@@ -433,11 +433,11 @@ class _$RunCopyWithImpl<$Res> implements $RunCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       programId: programId == freezed
           ? _value.programId
           : programId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       zoneId: zoneId == freezed
           ? _value.zoneId
           : zoneId // ignore: cast_nullable_to_non_nullable
@@ -464,8 +464,8 @@ abstract class _$$_RunCopyWith<$Res> implements $RunCopyWith<$Res> {
       __$$_RunCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'id') String id,
-      @JsonKey(name: 'program_id') String programId,
+      {@JsonKey(name: 'id') int id,
+      @JsonKey(name: 'program_id') int programId,
       @JsonKey(name: 'zone_id') int zoneId,
       @JsonKey(name: 'duration_seconds') int durationSeconds,
       @JsonKey(name: 'start_hour') int startHour,
@@ -494,11 +494,11 @@ class __$$_RunCopyWithImpl<$Res> extends _$RunCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       programId: programId == freezed
           ? _value.programId
           : programId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       zoneId: zoneId == freezed
           ? _value.zoneId
           : zoneId // ignore: cast_nullable_to_non_nullable
@@ -534,10 +534,10 @@ class _$_Run implements _Run {
 
   @override
   @JsonKey(name: 'id')
-  final String id;
+  final int id;
   @override
   @JsonKey(name: 'program_id')
-  final String programId;
+  final int programId;
   @override
   @JsonKey(name: 'zone_id')
   final int zoneId;
@@ -595,8 +595,8 @@ class _$_Run implements _Run {
 
 abstract class _Run implements Run {
   factory _Run(
-      {@JsonKey(name: 'id') required final String id,
-      @JsonKey(name: 'program_id') required final String programId,
+      {@JsonKey(name: 'id') required final int id,
+      @JsonKey(name: 'program_id') required final int programId,
       @JsonKey(name: 'zone_id') required final int zoneId,
       @JsonKey(name: 'duration_seconds') required final int durationSeconds,
       @JsonKey(name: 'start_hour') required final int startHour,
@@ -606,10 +606,10 @@ abstract class _Run implements Run {
 
   @override
   @JsonKey(name: 'id')
-  String get id;
+  int get id;
   @override
   @JsonKey(name: 'program_id')
-  String get programId;
+  int get programId;
   @override
   @JsonKey(name: 'zone_id')
   int get zoneId;

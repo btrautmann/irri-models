@@ -1,4 +1,3 @@
-include: ../all_lint_rules.yaml
 analyzer:
   exclude:
     - "**.freezed.dart"

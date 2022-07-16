@@ -20,7 +20,7 @@ Map<String, dynamic> _$$_GetProgramsResponseToJson(
     };
 
 _$_Program _$$_ProgramFromJson(Map json) => _$_Program(
-      id: json['id'] as String,
+      id: json['id'] as int,
       name: json['name'] as String,
       frequency:
           (json['frequency'] as List<dynamic>).map((e) => e as int).toList(),
@@ -38,8 +38,8 @@ Map<String, dynamic> _$$_ProgramToJson(_$_Program instance) =>
     };
 
 _$_Run _$$_RunFromJson(Map json) => _$_Run(
-      id: json['id'] as String,
-      programId: json['program_id'] as String,
+      id: json['id'] as int,
+      programId: json['program_id'] as int,
       zoneId: json['zone_id'] as int,
       durationSeconds: json['duration_seconds'] as int,
       startHour: json['start_hour'] as int,
