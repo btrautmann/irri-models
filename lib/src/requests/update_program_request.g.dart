@@ -9,7 +9,7 @@ part of 'update_program_request.dart';
 _$_UpdateProgramRequest _$$_UpdateProgramRequestFromJson(Map json) =>
     _$_UpdateProgramRequest(
       apiKey: json['api_key'] as String,
-      programId: json['program_id'] as String,
+      programId: json['program_id'] as int,
       programName: json['program_name'] as String,
       frequency:
           (json['frequency'] as List<dynamic>).map((e) => e as int).toList(),

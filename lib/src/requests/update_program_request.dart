@@ -8,7 +8,7 @@ part 'update_program_request.g.dart';
 class UpdateProgramRequest with _$UpdateProgramRequest {
   factory UpdateProgramRequest({
     @JsonKey(name: 'api_key') required String apiKey,
-    @JsonKey(name: 'program_id') required String programId,
+    @JsonKey(name: 'program_id') required int programId,
     @JsonKey(name: 'program_name') required String programName,
     @JsonKey(name: 'frequency') required List<int> frequency,
     @JsonKey(name: 'runs_to_create') required List<RunCreation> runsToCreate,

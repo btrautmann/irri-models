@@ -23,7 +23,7 @@ mixin _$UpdateProgramRequest {
   @JsonKey(name: 'api_key')
   String get apiKey => throw _privateConstructorUsedError;
   @JsonKey(name: 'program_id')
-  String get programId => throw _privateConstructorUsedError;
+  int get programId => throw _privateConstructorUsedError;
   @JsonKey(name: 'program_name')
   String get programName => throw _privateConstructorUsedError;
   @JsonKey(name: 'frequency')
@@ -46,7 +46,7 @@ abstract class $UpdateProgramRequestCopyWith<$Res> {
       _$UpdateProgramRequestCopyWithImpl<$Res>;
   $Res call(
       {@JsonKey(name: 'api_key') String apiKey,
-      @JsonKey(name: 'program_id') String programId,
+      @JsonKey(name: 'program_id') int programId,
       @JsonKey(name: 'program_name') String programName,
       @JsonKey(name: 'frequency') List<int> frequency,
       @JsonKey(name: 'runs_to_create') List<RunCreation> runsToCreate,
@@ -79,7 +79,7 @@ class _$UpdateProgramRequestCopyWithImpl<$Res>
       programId: programId == freezed
           ? _value.programId
           : programId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       programName: programName == freezed
           ? _value.programName
           : programName // ignore: cast_nullable_to_non_nullable
@@ -109,7 +109,7 @@ abstract class _$$_UpdateProgramRequestCopyWith<$Res>
   @override
   $Res call(
       {@JsonKey(name: 'api_key') String apiKey,
-      @JsonKey(name: 'program_id') String programId,
+      @JsonKey(name: 'program_id') int programId,
       @JsonKey(name: 'program_name') String programName,
       @JsonKey(name: 'frequency') List<int> frequency,
       @JsonKey(name: 'runs_to_create') List<RunCreation> runsToCreate,
@@ -144,7 +144,7 @@ class __$$_UpdateProgramRequestCopyWithImpl<$Res>
       programId: programId == freezed
           ? _value.programId
           : programId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       programName: programName == freezed
           ? _value.programName
           : programName // ignore: cast_nullable_to_non_nullable
@@ -193,7 +193,7 @@ class _$_UpdateProgramRequest implements _UpdateProgramRequest {
   final String apiKey;
   @override
   @JsonKey(name: 'program_id')
-  final String programId;
+  final int programId;
   @override
   @JsonKey(name: 'program_name')
   final String programName;
@@ -271,7 +271,7 @@ abstract class _UpdateProgramRequest implements UpdateProgramRequest {
       {@JsonKey(name: 'api_key')
           required final String apiKey,
       @JsonKey(name: 'program_id')
-          required final String programId,
+          required final int programId,
       @JsonKey(name: 'program_name')
           required final String programName,
       @JsonKey(name: 'frequency')
@@ -289,7 +289,7 @@ abstract class _UpdateProgramRequest implements UpdateProgramRequest {
   String get apiKey;
   @override
   @JsonKey(name: 'program_id')
-  String get programId;
+  int get programId;
   @override
   @JsonKey(name: 'program_name')
   String get programName;
