@@ -20,8 +20,6 @@ CreateProgramRequest _$CreateProgramRequestFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CreateProgramRequest {
-  @JsonKey(name: 'api_key')
-  String get apiKey => throw _privateConstructorUsedError;
   @JsonKey(name: 'program_name')
   String get programName => throw _privateConstructorUsedError;
   @JsonKey(name: 'frequency')
@@ -41,8 +39,7 @@ abstract class $CreateProgramRequestCopyWith<$Res> {
           $Res Function(CreateProgramRequest) then) =
       _$CreateProgramRequestCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'api_key') String apiKey,
-      @JsonKey(name: 'program_name') String programName,
+      {@JsonKey(name: 'program_name') String programName,
       @JsonKey(name: 'frequency') List<int> frequency,
       @JsonKey(name: 'runs') List<RunCreation> runs});
 }
@@ -58,16 +55,11 @@ class _$CreateProgramRequestCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? apiKey = freezed,
     Object? programName = freezed,
     Object? frequency = freezed,
     Object? runs = freezed,
   }) {
     return _then(_value.copyWith(
-      apiKey: apiKey == freezed
-          ? _value.apiKey
-          : apiKey // ignore: cast_nullable_to_non_nullable
-              as String,
       programName: programName == freezed
           ? _value.programName
           : programName // ignore: cast_nullable_to_non_nullable
@@ -92,8 +84,7 @@ abstract class _$$_CreateProgramRequestCopyWith<$Res>
       __$$_CreateProgramRequestCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'api_key') String apiKey,
-      @JsonKey(name: 'program_name') String programName,
+      {@JsonKey(name: 'program_name') String programName,
       @JsonKey(name: 'frequency') List<int> frequency,
       @JsonKey(name: 'runs') List<RunCreation> runs});
 }
@@ -111,16 +102,11 @@ class __$$_CreateProgramRequestCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? apiKey = freezed,
     Object? programName = freezed,
     Object? frequency = freezed,
     Object? runs = freezed,
   }) {
     return _then(_$_CreateProgramRequest(
-      apiKey: apiKey == freezed
-          ? _value.apiKey
-          : apiKey // ignore: cast_nullable_to_non_nullable
-              as String,
       programName: programName == freezed
           ? _value.programName
           : programName // ignore: cast_nullable_to_non_nullable
@@ -141,8 +127,7 @@ class __$$_CreateProgramRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_CreateProgramRequest implements _CreateProgramRequest {
   _$_CreateProgramRequest(
-      {@JsonKey(name: 'api_key') required this.apiKey,
-      @JsonKey(name: 'program_name') required this.programName,
+      {@JsonKey(name: 'program_name') required this.programName,
       @JsonKey(name: 'frequency') required final List<int> frequency,
       @JsonKey(name: 'runs') required final List<RunCreation> runs})
       : _frequency = frequency,
@@ -151,9 +136,6 @@ class _$_CreateProgramRequest implements _CreateProgramRequest {
   factory _$_CreateProgramRequest.fromJson(Map<String, dynamic> json) =>
       _$$_CreateProgramRequestFromJson(json);
 
-  @override
-  @JsonKey(name: 'api_key')
-  final String apiKey;
   @override
   @JsonKey(name: 'program_name')
   final String programName;
@@ -175,7 +157,7 @@ class _$_CreateProgramRequest implements _CreateProgramRequest {
 
   @override
   String toString() {
-    return 'CreateProgramRequest(apiKey: $apiKey, programName: $programName, frequency: $frequency, runs: $runs)';
+    return 'CreateProgramRequest(programName: $programName, frequency: $frequency, runs: $runs)';
   }
 
   @override
@@ -183,7 +165,6 @@ class _$_CreateProgramRequest implements _CreateProgramRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_CreateProgramRequest &&
-            const DeepCollectionEquality().equals(other.apiKey, apiKey) &&
             const DeepCollectionEquality()
                 .equals(other.programName, programName) &&
             const DeepCollectionEquality()
@@ -195,7 +176,6 @@ class _$_CreateProgramRequest implements _CreateProgramRequest {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(apiKey),
       const DeepCollectionEquality().hash(programName),
       const DeepCollectionEquality().hash(_frequency),
       const DeepCollectionEquality().hash(_runs));
@@ -214,8 +194,7 @@ class _$_CreateProgramRequest implements _CreateProgramRequest {
 
 abstract class _CreateProgramRequest implements CreateProgramRequest {
   factory _CreateProgramRequest(
-          {@JsonKey(name: 'api_key') required final String apiKey,
-          @JsonKey(name: 'program_name') required final String programName,
+          {@JsonKey(name: 'program_name') required final String programName,
           @JsonKey(name: 'frequency') required final List<int> frequency,
           @JsonKey(name: 'runs') required final List<RunCreation> runs}) =
       _$_CreateProgramRequest;
@@ -223,9 +202,6 @@ abstract class _CreateProgramRequest implements CreateProgramRequest {
   factory _CreateProgramRequest.fromJson(Map<String, dynamic> json) =
       _$_CreateProgramRequest.fromJson;
 
-  @override
-  @JsonKey(name: 'api_key')
-  String get apiKey;
   @override
   @JsonKey(name: 'program_name')
   String get programName;
@@ -238,218 +214,5 @@ abstract class _CreateProgramRequest implements CreateProgramRequest {
   @override
   @JsonKey(ignore: true)
   _$$_CreateProgramRequestCopyWith<_$_CreateProgramRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-RunCreation _$RunCreationFromJson(Map<String, dynamic> json) {
-  return _RunCreation.fromJson(json);
-}
-
-/// @nodoc
-mixin _$RunCreation {
-  @JsonKey(name: 'zone_id')
-  int get zoneId => throw _privateConstructorUsedError;
-  @JsonKey(name: 'duration_seconds')
-  int get durationSeconds => throw _privateConstructorUsedError;
-  @JsonKey(name: 'start_hour')
-  int get startHour => throw _privateConstructorUsedError;
-  @JsonKey(name: 'start_minute')
-  int get startMinute => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $RunCreationCopyWith<RunCreation> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RunCreationCopyWith<$Res> {
-  factory $RunCreationCopyWith(
-          RunCreation value, $Res Function(RunCreation) then) =
-      _$RunCreationCopyWithImpl<$Res>;
-  $Res call(
-      {@JsonKey(name: 'zone_id') int zoneId,
-      @JsonKey(name: 'duration_seconds') int durationSeconds,
-      @JsonKey(name: 'start_hour') int startHour,
-      @JsonKey(name: 'start_minute') int startMinute});
-}
-
-/// @nodoc
-class _$RunCreationCopyWithImpl<$Res> implements $RunCreationCopyWith<$Res> {
-  _$RunCreationCopyWithImpl(this._value, this._then);
-
-  final RunCreation _value;
-  // ignore: unused_field
-  final $Res Function(RunCreation) _then;
-
-  @override
-  $Res call({
-    Object? zoneId = freezed,
-    Object? durationSeconds = freezed,
-    Object? startHour = freezed,
-    Object? startMinute = freezed,
-  }) {
-    return _then(_value.copyWith(
-      zoneId: zoneId == freezed
-          ? _value.zoneId
-          : zoneId // ignore: cast_nullable_to_non_nullable
-              as int,
-      durationSeconds: durationSeconds == freezed
-          ? _value.durationSeconds
-          : durationSeconds // ignore: cast_nullable_to_non_nullable
-              as int,
-      startHour: startHour == freezed
-          ? _value.startHour
-          : startHour // ignore: cast_nullable_to_non_nullable
-              as int,
-      startMinute: startMinute == freezed
-          ? _value.startMinute
-          : startMinute // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-abstract class _$$_RunCreationCopyWith<$Res>
-    implements $RunCreationCopyWith<$Res> {
-  factory _$$_RunCreationCopyWith(
-          _$_RunCreation value, $Res Function(_$_RunCreation) then) =
-      __$$_RunCreationCopyWithImpl<$Res>;
-  @override
-  $Res call(
-      {@JsonKey(name: 'zone_id') int zoneId,
-      @JsonKey(name: 'duration_seconds') int durationSeconds,
-      @JsonKey(name: 'start_hour') int startHour,
-      @JsonKey(name: 'start_minute') int startMinute});
-}
-
-/// @nodoc
-class __$$_RunCreationCopyWithImpl<$Res> extends _$RunCreationCopyWithImpl<$Res>
-    implements _$$_RunCreationCopyWith<$Res> {
-  __$$_RunCreationCopyWithImpl(
-      _$_RunCreation _value, $Res Function(_$_RunCreation) _then)
-      : super(_value, (v) => _then(v as _$_RunCreation));
-
-  @override
-  _$_RunCreation get _value => super._value as _$_RunCreation;
-
-  @override
-  $Res call({
-    Object? zoneId = freezed,
-    Object? durationSeconds = freezed,
-    Object? startHour = freezed,
-    Object? startMinute = freezed,
-  }) {
-    return _then(_$_RunCreation(
-      zoneId: zoneId == freezed
-          ? _value.zoneId
-          : zoneId // ignore: cast_nullable_to_non_nullable
-              as int,
-      durationSeconds: durationSeconds == freezed
-          ? _value.durationSeconds
-          : durationSeconds // ignore: cast_nullable_to_non_nullable
-              as int,
-      startHour: startHour == freezed
-          ? _value.startHour
-          : startHour // ignore: cast_nullable_to_non_nullable
-              as int,
-      startMinute: startMinute == freezed
-          ? _value.startMinute
-          : startMinute // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$_RunCreation implements _RunCreation {
-  _$_RunCreation(
-      {@JsonKey(name: 'zone_id') required this.zoneId,
-      @JsonKey(name: 'duration_seconds') required this.durationSeconds,
-      @JsonKey(name: 'start_hour') required this.startHour,
-      @JsonKey(name: 'start_minute') required this.startMinute});
-
-  factory _$_RunCreation.fromJson(Map<String, dynamic> json) =>
-      _$$_RunCreationFromJson(json);
-
-  @override
-  @JsonKey(name: 'zone_id')
-  final int zoneId;
-  @override
-  @JsonKey(name: 'duration_seconds')
-  final int durationSeconds;
-  @override
-  @JsonKey(name: 'start_hour')
-  final int startHour;
-  @override
-  @JsonKey(name: 'start_minute')
-  final int startMinute;
-
-  @override
-  String toString() {
-    return 'RunCreation(zoneId: $zoneId, durationSeconds: $durationSeconds, startHour: $startHour, startMinute: $startMinute)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_RunCreation &&
-            const DeepCollectionEquality().equals(other.zoneId, zoneId) &&
-            const DeepCollectionEquality()
-                .equals(other.durationSeconds, durationSeconds) &&
-            const DeepCollectionEquality().equals(other.startHour, startHour) &&
-            const DeepCollectionEquality()
-                .equals(other.startMinute, startMinute));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(zoneId),
-      const DeepCollectionEquality().hash(durationSeconds),
-      const DeepCollectionEquality().hash(startHour),
-      const DeepCollectionEquality().hash(startMinute));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$_RunCreationCopyWith<_$_RunCreation> get copyWith =>
-      __$$_RunCreationCopyWithImpl<_$_RunCreation>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_RunCreationToJson(this);
-  }
-}
-
-abstract class _RunCreation implements RunCreation {
-  factory _RunCreation(
-          {@JsonKey(name: 'zone_id') required final int zoneId,
-          @JsonKey(name: 'duration_seconds') required final int durationSeconds,
-          @JsonKey(name: 'start_hour') required final int startHour,
-          @JsonKey(name: 'start_minute') required final int startMinute}) =
-      _$_RunCreation;
-
-  factory _RunCreation.fromJson(Map<String, dynamic> json) =
-      _$_RunCreation.fromJson;
-
-  @override
-  @JsonKey(name: 'zone_id')
-  int get zoneId;
-  @override
-  @JsonKey(name: 'duration_seconds')
-  int get durationSeconds;
-  @override
-  @JsonKey(name: 'start_hour')
-  int get startHour;
-  @override
-  @JsonKey(name: 'start_minute')
-  int get startMinute;
-  @override
-  @JsonKey(ignore: true)
-  _$$_RunCreationCopyWith<_$_RunCreation> get copyWith =>
       throw _privateConstructorUsedError;
 }

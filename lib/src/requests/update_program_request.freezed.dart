@@ -20,8 +20,6 @@ UpdateProgramRequest _$UpdateProgramRequestFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UpdateProgramRequest {
-  @JsonKey(name: 'api_key')
-  String get apiKey => throw _privateConstructorUsedError;
   @JsonKey(name: 'program_id')
   int get programId => throw _privateConstructorUsedError;
   @JsonKey(name: 'program_name')
@@ -32,6 +30,8 @@ mixin _$UpdateProgramRequest {
   List<RunCreation> get runsToCreate => throw _privateConstructorUsedError;
   @JsonKey(name: 'runs_to_update')
   List<Run> get runsToUpdate => throw _privateConstructorUsedError;
+  @JsonKey(name: 'runs_to_delete')
+  List<Run> get runsToDelete => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -45,12 +45,12 @@ abstract class $UpdateProgramRequestCopyWith<$Res> {
           $Res Function(UpdateProgramRequest) then) =
       _$UpdateProgramRequestCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'api_key') String apiKey,
-      @JsonKey(name: 'program_id') int programId,
+      {@JsonKey(name: 'program_id') int programId,
       @JsonKey(name: 'program_name') String programName,
       @JsonKey(name: 'frequency') List<int> frequency,
       @JsonKey(name: 'runs_to_create') List<RunCreation> runsToCreate,
-      @JsonKey(name: 'runs_to_update') List<Run> runsToUpdate});
+      @JsonKey(name: 'runs_to_update') List<Run> runsToUpdate,
+      @JsonKey(name: 'runs_to_delete') List<Run> runsToDelete});
 }
 
 /// @nodoc
@@ -64,18 +64,14 @@ class _$UpdateProgramRequestCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? apiKey = freezed,
     Object? programId = freezed,
     Object? programName = freezed,
     Object? frequency = freezed,
     Object? runsToCreate = freezed,
     Object? runsToUpdate = freezed,
+    Object? runsToDelete = freezed,
   }) {
     return _then(_value.copyWith(
-      apiKey: apiKey == freezed
-          ? _value.apiKey
-          : apiKey // ignore: cast_nullable_to_non_nullable
-              as String,
       programId: programId == freezed
           ? _value.programId
           : programId // ignore: cast_nullable_to_non_nullable
@@ -96,6 +92,10 @@ class _$UpdateProgramRequestCopyWithImpl<$Res>
           ? _value.runsToUpdate
           : runsToUpdate // ignore: cast_nullable_to_non_nullable
               as List<Run>,
+      runsToDelete: runsToDelete == freezed
+          ? _value.runsToDelete
+          : runsToDelete // ignore: cast_nullable_to_non_nullable
+              as List<Run>,
     ));
   }
 }
@@ -108,12 +108,12 @@ abstract class _$$_UpdateProgramRequestCopyWith<$Res>
       __$$_UpdateProgramRequestCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'api_key') String apiKey,
-      @JsonKey(name: 'program_id') int programId,
+      {@JsonKey(name: 'program_id') int programId,
       @JsonKey(name: 'program_name') String programName,
       @JsonKey(name: 'frequency') List<int> frequency,
       @JsonKey(name: 'runs_to_create') List<RunCreation> runsToCreate,
-      @JsonKey(name: 'runs_to_update') List<Run> runsToUpdate});
+      @JsonKey(name: 'runs_to_update') List<Run> runsToUpdate,
+      @JsonKey(name: 'runs_to_delete') List<Run> runsToDelete});
 }
 
 /// @nodoc
@@ -129,18 +129,14 @@ class __$$_UpdateProgramRequestCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? apiKey = freezed,
     Object? programId = freezed,
     Object? programName = freezed,
     Object? frequency = freezed,
     Object? runsToCreate = freezed,
     Object? runsToUpdate = freezed,
+    Object? runsToDelete = freezed,
   }) {
     return _then(_$_UpdateProgramRequest(
-      apiKey: apiKey == freezed
-          ? _value.apiKey
-          : apiKey // ignore: cast_nullable_to_non_nullable
-              as String,
       programId: programId == freezed
           ? _value.programId
           : programId // ignore: cast_nullable_to_non_nullable
@@ -161,6 +157,10 @@ class __$$_UpdateProgramRequestCopyWithImpl<$Res>
           ? _value._runsToUpdate
           : runsToUpdate // ignore: cast_nullable_to_non_nullable
               as List<Run>,
+      runsToDelete: runsToDelete == freezed
+          ? _value._runsToDelete
+          : runsToDelete // ignore: cast_nullable_to_non_nullable
+              as List<Run>,
     ));
   }
 }
@@ -169,9 +169,7 @@ class __$$_UpdateProgramRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_UpdateProgramRequest implements _UpdateProgramRequest {
   _$_UpdateProgramRequest(
-      {@JsonKey(name: 'api_key')
-          required this.apiKey,
-      @JsonKey(name: 'program_id')
+      {@JsonKey(name: 'program_id')
           required this.programId,
       @JsonKey(name: 'program_name')
           required this.programName,
@@ -180,17 +178,17 @@ class _$_UpdateProgramRequest implements _UpdateProgramRequest {
       @JsonKey(name: 'runs_to_create')
           required final List<RunCreation> runsToCreate,
       @JsonKey(name: 'runs_to_update')
-          required final List<Run> runsToUpdate})
+          required final List<Run> runsToUpdate,
+      @JsonKey(name: 'runs_to_delete')
+          required final List<Run> runsToDelete})
       : _frequency = frequency,
         _runsToCreate = runsToCreate,
-        _runsToUpdate = runsToUpdate;
+        _runsToUpdate = runsToUpdate,
+        _runsToDelete = runsToDelete;
 
   factory _$_UpdateProgramRequest.fromJson(Map<String, dynamic> json) =>
       _$$_UpdateProgramRequestFromJson(json);
 
-  @override
-  @JsonKey(name: 'api_key')
-  final String apiKey;
   @override
   @JsonKey(name: 'program_id')
   final int programId;
@@ -221,9 +219,17 @@ class _$_UpdateProgramRequest implements _UpdateProgramRequest {
     return EqualUnmodifiableListView(_runsToUpdate);
   }
 
+  final List<Run> _runsToDelete;
+  @override
+  @JsonKey(name: 'runs_to_delete')
+  List<Run> get runsToDelete {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_runsToDelete);
+  }
+
   @override
   String toString() {
-    return 'UpdateProgramRequest(apiKey: $apiKey, programId: $programId, programName: $programName, frequency: $frequency, runsToCreate: $runsToCreate, runsToUpdate: $runsToUpdate)';
+    return 'UpdateProgramRequest(programId: $programId, programName: $programName, frequency: $frequency, runsToCreate: $runsToCreate, runsToUpdate: $runsToUpdate, runsToDelete: $runsToDelete)';
   }
 
   @override
@@ -231,7 +237,6 @@ class _$_UpdateProgramRequest implements _UpdateProgramRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_UpdateProgramRequest &&
-            const DeepCollectionEquality().equals(other.apiKey, apiKey) &&
             const DeepCollectionEquality().equals(other.programId, programId) &&
             const DeepCollectionEquality()
                 .equals(other.programName, programName) &&
@@ -240,19 +245,21 @@ class _$_UpdateProgramRequest implements _UpdateProgramRequest {
             const DeepCollectionEquality()
                 .equals(other._runsToCreate, _runsToCreate) &&
             const DeepCollectionEquality()
-                .equals(other._runsToUpdate, _runsToUpdate));
+                .equals(other._runsToUpdate, _runsToUpdate) &&
+            const DeepCollectionEquality()
+                .equals(other._runsToDelete, _runsToDelete));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(apiKey),
       const DeepCollectionEquality().hash(programId),
       const DeepCollectionEquality().hash(programName),
       const DeepCollectionEquality().hash(_frequency),
       const DeepCollectionEquality().hash(_runsToCreate),
-      const DeepCollectionEquality().hash(_runsToUpdate));
+      const DeepCollectionEquality().hash(_runsToUpdate),
+      const DeepCollectionEquality().hash(_runsToDelete));
 
   @JsonKey(ignore: true)
   @override
@@ -268,9 +275,7 @@ class _$_UpdateProgramRequest implements _UpdateProgramRequest {
 
 abstract class _UpdateProgramRequest implements UpdateProgramRequest {
   factory _UpdateProgramRequest(
-      {@JsonKey(name: 'api_key')
-          required final String apiKey,
-      @JsonKey(name: 'program_id')
+      {@JsonKey(name: 'program_id')
           required final int programId,
       @JsonKey(name: 'program_name')
           required final String programName,
@@ -279,14 +284,13 @@ abstract class _UpdateProgramRequest implements UpdateProgramRequest {
       @JsonKey(name: 'runs_to_create')
           required final List<RunCreation> runsToCreate,
       @JsonKey(name: 'runs_to_update')
-          required final List<Run> runsToUpdate}) = _$_UpdateProgramRequest;
+          required final List<Run> runsToUpdate,
+      @JsonKey(name: 'runs_to_delete')
+          required final List<Run> runsToDelete}) = _$_UpdateProgramRequest;
 
   factory _UpdateProgramRequest.fromJson(Map<String, dynamic> json) =
       _$_UpdateProgramRequest.fromJson;
 
-  @override
-  @JsonKey(name: 'api_key')
-  String get apiKey;
   @override
   @JsonKey(name: 'program_id')
   int get programId;
@@ -302,6 +306,9 @@ abstract class _UpdateProgramRequest implements UpdateProgramRequest {
   @override
   @JsonKey(name: 'runs_to_update')
   List<Run> get runsToUpdate;
+  @override
+  @JsonKey(name: 'runs_to_delete')
+  List<Run> get runsToDelete;
   @override
   @JsonKey(ignore: true)
   _$$_UpdateProgramRequestCopyWith<_$_UpdateProgramRequest> get copyWith =>

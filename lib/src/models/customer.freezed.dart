@@ -22,10 +22,10 @@ Customer _$CustomerFromJson(Map<String, dynamic> json) {
 mixin _$Customer {
   @JsonKey(name: 'customer_id')
   int get customerId => throw _privateConstructorUsedError;
-  @JsonKey(name: 'api_key')
-  String get apiKey => throw _privateConstructorUsedError;
   @JsonKey(name: 'active_controller_id')
   int get activeControllerId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'timezone')
+  String? get timezone => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -39,8 +39,8 @@ abstract class $CustomerCopyWith<$Res> {
       _$CustomerCopyWithImpl<$Res>;
   $Res call(
       {@JsonKey(name: 'customer_id') int customerId,
-      @JsonKey(name: 'api_key') String apiKey,
-      @JsonKey(name: 'active_controller_id') int activeControllerId});
+      @JsonKey(name: 'active_controller_id') int activeControllerId,
+      @JsonKey(name: 'timezone') String? timezone});
 }
 
 /// @nodoc
@@ -54,22 +54,22 @@ class _$CustomerCopyWithImpl<$Res> implements $CustomerCopyWith<$Res> {
   @override
   $Res call({
     Object? customerId = freezed,
-    Object? apiKey = freezed,
     Object? activeControllerId = freezed,
+    Object? timezone = freezed,
   }) {
     return _then(_value.copyWith(
       customerId: customerId == freezed
           ? _value.customerId
           : customerId // ignore: cast_nullable_to_non_nullable
               as int,
-      apiKey: apiKey == freezed
-          ? _value.apiKey
-          : apiKey // ignore: cast_nullable_to_non_nullable
-              as String,
       activeControllerId: activeControllerId == freezed
           ? _value.activeControllerId
           : activeControllerId // ignore: cast_nullable_to_non_nullable
               as int,
+      timezone: timezone == freezed
+          ? _value.timezone
+          : timezone // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -82,8 +82,8 @@ abstract class _$$_CustomerCopyWith<$Res> implements $CustomerCopyWith<$Res> {
   @override
   $Res call(
       {@JsonKey(name: 'customer_id') int customerId,
-      @JsonKey(name: 'api_key') String apiKey,
-      @JsonKey(name: 'active_controller_id') int activeControllerId});
+      @JsonKey(name: 'active_controller_id') int activeControllerId,
+      @JsonKey(name: 'timezone') String? timezone});
 }
 
 /// @nodoc
@@ -99,22 +99,22 @@ class __$$_CustomerCopyWithImpl<$Res> extends _$CustomerCopyWithImpl<$Res>
   @override
   $Res call({
     Object? customerId = freezed,
-    Object? apiKey = freezed,
     Object? activeControllerId = freezed,
+    Object? timezone = freezed,
   }) {
     return _then(_$_Customer(
       customerId: customerId == freezed
           ? _value.customerId
           : customerId // ignore: cast_nullable_to_non_nullable
               as int,
-      apiKey: apiKey == freezed
-          ? _value.apiKey
-          : apiKey // ignore: cast_nullable_to_non_nullable
-              as String,
       activeControllerId: activeControllerId == freezed
           ? _value.activeControllerId
           : activeControllerId // ignore: cast_nullable_to_non_nullable
               as int,
+      timezone: timezone == freezed
+          ? _value.timezone
+          : timezone // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -124,8 +124,8 @@ class __$$_CustomerCopyWithImpl<$Res> extends _$CustomerCopyWithImpl<$Res>
 class _$_Customer implements _Customer {
   _$_Customer(
       {@JsonKey(name: 'customer_id') required this.customerId,
-      @JsonKey(name: 'api_key') required this.apiKey,
-      @JsonKey(name: 'active_controller_id') required this.activeControllerId});
+      @JsonKey(name: 'active_controller_id') required this.activeControllerId,
+      @JsonKey(name: 'timezone') this.timezone});
 
   factory _$_Customer.fromJson(Map<String, dynamic> json) =>
       _$$_CustomerFromJson(json);
@@ -134,15 +134,15 @@ class _$_Customer implements _Customer {
   @JsonKey(name: 'customer_id')
   final int customerId;
   @override
-  @JsonKey(name: 'api_key')
-  final String apiKey;
-  @override
   @JsonKey(name: 'active_controller_id')
   final int activeControllerId;
+  @override
+  @JsonKey(name: 'timezone')
+  final String? timezone;
 
   @override
   String toString() {
-    return 'Customer(customerId: $customerId, apiKey: $apiKey, activeControllerId: $activeControllerId)';
+    return 'Customer(customerId: $customerId, activeControllerId: $activeControllerId, timezone: $timezone)';
   }
 
   @override
@@ -152,9 +152,9 @@ class _$_Customer implements _Customer {
             other is _$_Customer &&
             const DeepCollectionEquality()
                 .equals(other.customerId, customerId) &&
-            const DeepCollectionEquality().equals(other.apiKey, apiKey) &&
             const DeepCollectionEquality()
-                .equals(other.activeControllerId, activeControllerId));
+                .equals(other.activeControllerId, activeControllerId) &&
+            const DeepCollectionEquality().equals(other.timezone, timezone));
   }
 
   @JsonKey(ignore: true)
@@ -162,8 +162,8 @@ class _$_Customer implements _Customer {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(customerId),
-      const DeepCollectionEquality().hash(apiKey),
-      const DeepCollectionEquality().hash(activeControllerId));
+      const DeepCollectionEquality().hash(activeControllerId),
+      const DeepCollectionEquality().hash(timezone));
 
   @JsonKey(ignore: true)
   @override
@@ -180,10 +180,10 @@ abstract class _Customer implements Customer {
   factory _Customer(
       {@JsonKey(name: 'customer_id')
           required final int customerId,
-      @JsonKey(name: 'api_key')
-          required final String apiKey,
       @JsonKey(name: 'active_controller_id')
-          required final int activeControllerId}) = _$_Customer;
+          required final int activeControllerId,
+      @JsonKey(name: 'timezone')
+          final String? timezone}) = _$_Customer;
 
   factory _Customer.fromJson(Map<String, dynamic> json) = _$_Customer.fromJson;
 
@@ -191,11 +191,11 @@ abstract class _Customer implements Customer {
   @JsonKey(name: 'customer_id')
   int get customerId;
   @override
-  @JsonKey(name: 'api_key')
-  String get apiKey;
-  @override
   @JsonKey(name: 'active_controller_id')
   int get activeControllerId;
+  @override
+  @JsonKey(name: 'timezone')
+  String? get timezone;
   @override
   @JsonKey(ignore: true)
   _$$_CustomerCopyWith<_$_Customer> get copyWith =>

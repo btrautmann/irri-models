@@ -6,7 +6,6 @@ part 'login_request.g.dart';
 @freezed
 class LoginRequest with _$LoginRequest {
   factory LoginRequest({
-    @JsonKey(name: 'api_key') required String apiKey,
     required String type,
   }) = _LoginRequest;
 

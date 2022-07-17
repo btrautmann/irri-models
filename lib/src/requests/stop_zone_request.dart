@@ -6,7 +6,6 @@ part 'stop_zone_request.g.dart';
 @freezed
 class StopZoneRequest with _$StopZoneRequest {
   factory StopZoneRequest({
-    @JsonKey(name: 'api_key') required String apiKey,
     @JsonKey(name: 'zone_id') required int zoneId,
   }) = _StopZoneRequest;
 

@@ -20,8 +20,6 @@ RunZoneRequest _$RunZoneRequestFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$RunZoneRequest {
-  @JsonKey(name: 'api_key')
-  String get apiKey => throw _privateConstructorUsedError;
   @JsonKey(name: 'zone_id')
   int get zoneId => throw _privateConstructorUsedError;
   @JsonKey(name: 'run_length_seconds')
@@ -39,8 +37,7 @@ abstract class $RunZoneRequestCopyWith<$Res> {
           RunZoneRequest value, $Res Function(RunZoneRequest) then) =
       _$RunZoneRequestCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'api_key') String apiKey,
-      @JsonKey(name: 'zone_id') int zoneId,
+      {@JsonKey(name: 'zone_id') int zoneId,
       @JsonKey(name: 'run_length_seconds') int runLengthSeconds});
 }
 
@@ -55,15 +52,10 @@ class _$RunZoneRequestCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? apiKey = freezed,
     Object? zoneId = freezed,
     Object? runLengthSeconds = freezed,
   }) {
     return _then(_value.copyWith(
-      apiKey: apiKey == freezed
-          ? _value.apiKey
-          : apiKey // ignore: cast_nullable_to_non_nullable
-              as String,
       zoneId: zoneId == freezed
           ? _value.zoneId
           : zoneId // ignore: cast_nullable_to_non_nullable
@@ -84,8 +76,7 @@ abstract class _$$_RunZoneRequestCopyWith<$Res>
       __$$_RunZoneRequestCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'api_key') String apiKey,
-      @JsonKey(name: 'zone_id') int zoneId,
+      {@JsonKey(name: 'zone_id') int zoneId,
       @JsonKey(name: 'run_length_seconds') int runLengthSeconds});
 }
 
@@ -102,15 +93,10 @@ class __$$_RunZoneRequestCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? apiKey = freezed,
     Object? zoneId = freezed,
     Object? runLengthSeconds = freezed,
   }) {
     return _then(_$_RunZoneRequest(
-      apiKey: apiKey == freezed
-          ? _value.apiKey
-          : apiKey // ignore: cast_nullable_to_non_nullable
-              as String,
       zoneId: zoneId == freezed
           ? _value.zoneId
           : zoneId // ignore: cast_nullable_to_non_nullable
@@ -127,16 +113,12 @@ class __$$_RunZoneRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_RunZoneRequest implements _RunZoneRequest {
   _$_RunZoneRequest(
-      {@JsonKey(name: 'api_key') required this.apiKey,
-      @JsonKey(name: 'zone_id') required this.zoneId,
+      {@JsonKey(name: 'zone_id') required this.zoneId,
       @JsonKey(name: 'run_length_seconds') required this.runLengthSeconds});
 
   factory _$_RunZoneRequest.fromJson(Map<String, dynamic> json) =>
       _$$_RunZoneRequestFromJson(json);
 
-  @override
-  @JsonKey(name: 'api_key')
-  final String apiKey;
   @override
   @JsonKey(name: 'zone_id')
   final int zoneId;
@@ -146,7 +128,7 @@ class _$_RunZoneRequest implements _RunZoneRequest {
 
   @override
   String toString() {
-    return 'RunZoneRequest(apiKey: $apiKey, zoneId: $zoneId, runLengthSeconds: $runLengthSeconds)';
+    return 'RunZoneRequest(zoneId: $zoneId, runLengthSeconds: $runLengthSeconds)';
   }
 
   @override
@@ -154,7 +136,6 @@ class _$_RunZoneRequest implements _RunZoneRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_RunZoneRequest &&
-            const DeepCollectionEquality().equals(other.apiKey, apiKey) &&
             const DeepCollectionEquality().equals(other.zoneId, zoneId) &&
             const DeepCollectionEquality()
                 .equals(other.runLengthSeconds, runLengthSeconds));
@@ -164,7 +145,6 @@ class _$_RunZoneRequest implements _RunZoneRequest {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(apiKey),
       const DeepCollectionEquality().hash(zoneId),
       const DeepCollectionEquality().hash(runLengthSeconds));
 
@@ -181,9 +161,7 @@ class _$_RunZoneRequest implements _RunZoneRequest {
 
 abstract class _RunZoneRequest implements RunZoneRequest {
   factory _RunZoneRequest(
-      {@JsonKey(name: 'api_key')
-          required final String apiKey,
-      @JsonKey(name: 'zone_id')
+      {@JsonKey(name: 'zone_id')
           required final int zoneId,
       @JsonKey(name: 'run_length_seconds')
           required final int runLengthSeconds}) = _$_RunZoneRequest;
@@ -191,9 +169,6 @@ abstract class _RunZoneRequest implements RunZoneRequest {
   factory _RunZoneRequest.fromJson(Map<String, dynamic> json) =
       _$_RunZoneRequest.fromJson;
 
-  @override
-  @JsonKey(name: 'api_key')
-  String get apiKey;
   @override
   @JsonKey(name: 'zone_id')
   int get zoneId;

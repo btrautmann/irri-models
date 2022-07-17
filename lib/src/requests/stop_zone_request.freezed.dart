@@ -20,8 +20,6 @@ StopZoneRequest _$StopZoneRequestFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$StopZoneRequest {
-  @JsonKey(name: 'api_key')
-  String get apiKey => throw _privateConstructorUsedError;
   @JsonKey(name: 'zone_id')
   int get zoneId => throw _privateConstructorUsedError;
 
@@ -36,9 +34,7 @@ abstract class $StopZoneRequestCopyWith<$Res> {
   factory $StopZoneRequestCopyWith(
           StopZoneRequest value, $Res Function(StopZoneRequest) then) =
       _$StopZoneRequestCopyWithImpl<$Res>;
-  $Res call(
-      {@JsonKey(name: 'api_key') String apiKey,
-      @JsonKey(name: 'zone_id') int zoneId});
+  $Res call({@JsonKey(name: 'zone_id') int zoneId});
 }
 
 /// @nodoc
@@ -52,14 +48,9 @@ class _$StopZoneRequestCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? apiKey = freezed,
     Object? zoneId = freezed,
   }) {
     return _then(_value.copyWith(
-      apiKey: apiKey == freezed
-          ? _value.apiKey
-          : apiKey // ignore: cast_nullable_to_non_nullable
-              as String,
       zoneId: zoneId == freezed
           ? _value.zoneId
           : zoneId // ignore: cast_nullable_to_non_nullable
@@ -75,9 +66,7 @@ abstract class _$$_StopZoneRequestCopyWith<$Res>
           _$_StopZoneRequest value, $Res Function(_$_StopZoneRequest) then) =
       __$$_StopZoneRequestCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {@JsonKey(name: 'api_key') String apiKey,
-      @JsonKey(name: 'zone_id') int zoneId});
+  $Res call({@JsonKey(name: 'zone_id') int zoneId});
 }
 
 /// @nodoc
@@ -93,14 +82,9 @@ class __$$_StopZoneRequestCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? apiKey = freezed,
     Object? zoneId = freezed,
   }) {
     return _then(_$_StopZoneRequest(
-      apiKey: apiKey == freezed
-          ? _value.apiKey
-          : apiKey // ignore: cast_nullable_to_non_nullable
-              as String,
       zoneId: zoneId == freezed
           ? _value.zoneId
           : zoneId // ignore: cast_nullable_to_non_nullable
@@ -112,23 +96,18 @@ class __$$_StopZoneRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_StopZoneRequest implements _StopZoneRequest {
-  _$_StopZoneRequest(
-      {@JsonKey(name: 'api_key') required this.apiKey,
-      @JsonKey(name: 'zone_id') required this.zoneId});
+  _$_StopZoneRequest({@JsonKey(name: 'zone_id') required this.zoneId});
 
   factory _$_StopZoneRequest.fromJson(Map<String, dynamic> json) =>
       _$$_StopZoneRequestFromJson(json);
 
-  @override
-  @JsonKey(name: 'api_key')
-  final String apiKey;
   @override
   @JsonKey(name: 'zone_id')
   final int zoneId;
 
   @override
   String toString() {
-    return 'StopZoneRequest(apiKey: $apiKey, zoneId: $zoneId)';
+    return 'StopZoneRequest(zoneId: $zoneId)';
   }
 
   @override
@@ -136,16 +115,13 @@ class _$_StopZoneRequest implements _StopZoneRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_StopZoneRequest &&
-            const DeepCollectionEquality().equals(other.apiKey, apiKey) &&
             const DeepCollectionEquality().equals(other.zoneId, zoneId));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(apiKey),
-      const DeepCollectionEquality().hash(zoneId));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(zoneId));
 
   @JsonKey(ignore: true)
   @override
@@ -160,16 +136,12 @@ class _$_StopZoneRequest implements _StopZoneRequest {
 
 abstract class _StopZoneRequest implements StopZoneRequest {
   factory _StopZoneRequest(
-          {@JsonKey(name: 'api_key') required final String apiKey,
-          @JsonKey(name: 'zone_id') required final int zoneId}) =
+          {@JsonKey(name: 'zone_id') required final int zoneId}) =
       _$_StopZoneRequest;
 
   factory _StopZoneRequest.fromJson(Map<String, dynamic> json) =
       _$_StopZoneRequest.fromJson;
 
-  @override
-  @JsonKey(name: 'api_key')
-  String get apiKey;
   @override
   @JsonKey(name: 'zone_id')
   int get zoneId;

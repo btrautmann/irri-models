@@ -1,3 +1,4 @@
+import 'package:api_models/src/models/program.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'get_programs_response.freezed.dart';
@@ -11,31 +12,4 @@ class GetProgramsResponse with _$GetProgramsResponse {
 
   factory GetProgramsResponse.fromJson(Map<String, dynamic> json) =>
       _$GetProgramsResponseFromJson(json);
-}
-
-@freezed
-class Program with _$Program {
-  factory Program({
-    @JsonKey(name: 'id') required int id,
-    @JsonKey(name: 'name') required String name,
-    @JsonKey(name: 'frequency') required List<int> frequency,
-    @JsonKey(name: 'runs') required List<Run> runs,
-  }) = _Program;
-
-  factory Program.fromJson(Map<String, dynamic> json) =>
-      _$ProgramFromJson(json);
-}
-
-@freezed
-class Run with _$Run {
-  factory Run({
-    @JsonKey(name: 'id') required int id,
-    @JsonKey(name: 'program_id') required int programId,
-    @JsonKey(name: 'zone_id') required int zoneId,
-    @JsonKey(name: 'duration_seconds') required int durationSeconds,
-    @JsonKey(name: 'start_hour') required int startHour,
-    @JsonKey(name: 'start_minute') required int startMinute,
-  }) = _Run;
-
-  factory Run.fromJson(Map<String, dynamic> json) => _$RunFromJson(json);
 }

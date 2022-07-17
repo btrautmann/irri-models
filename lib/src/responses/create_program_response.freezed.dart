@@ -36,8 +36,6 @@ abstract class $CreateProgramResponseCopyWith<$Res> {
           $Res Function(CreateProgramResponse) then) =
       _$CreateProgramResponseCopyWithImpl<$Res>;
   $Res call({@JsonKey(name: 'program') Program program});
-
-  $ProgramCopyWith<$Res> get program;
 }
 
 /// @nodoc
@@ -60,13 +58,6 @@ class _$CreateProgramResponseCopyWithImpl<$Res>
               as Program,
     ));
   }
-
-  @override
-  $ProgramCopyWith<$Res> get program {
-    return $ProgramCopyWith<$Res>(_value.program, (value) {
-      return _then(_value.copyWith(program: value));
-    });
-  }
 }
 
 /// @nodoc
@@ -77,9 +68,6 @@ abstract class _$$_CreateProgramResponseCopyWith<$Res>
       __$$_CreateProgramResponseCopyWithImpl<$Res>;
   @override
   $Res call({@JsonKey(name: 'program') Program program});
-
-  @override
-  $ProgramCopyWith<$Res> get program;
 }
 
 /// @nodoc

@@ -1,4 +1,4 @@
-import 'package:api_models/src/responses/get_programs_response.dart';
+import 'package:api_models/src/models/program.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'create_program_response.freezed.dart';

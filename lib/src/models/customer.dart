@@ -7,8 +7,8 @@ part 'customer.g.dart';
 class Customer with _$Customer {
   factory Customer({
     @JsonKey(name: 'customer_id') required int customerId,
-    @JsonKey(name: 'api_key') required String apiKey,
     @JsonKey(name: 'active_controller_id') required int activeControllerId,
+    @JsonKey(name: 'timezone') String? timezone,
   }) = _Customer;
 
   factory Customer.fromJson(
