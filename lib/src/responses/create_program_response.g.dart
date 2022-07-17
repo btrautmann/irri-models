@@ -8,11 +8,12 @@ part of 'create_program_response.dart';
 
 _$_CreateProgramResponse _$$_CreateProgramResponseFromJson(Map json) =>
     _$_CreateProgramResponse(
-      program: json['program'],
+      program:
+          Program.fromJson(Map<String, dynamic>.from(json['program'] as Map)),
     );
 
 Map<String, dynamic> _$$_CreateProgramResponseToJson(
         _$_CreateProgramResponse instance) =>
     <String, dynamic>{
-      'program': instance.program,
+      'program': instance.program.toJson(),
     };

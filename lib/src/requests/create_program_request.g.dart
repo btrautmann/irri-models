@@ -11,7 +11,9 @@ _$_CreateProgramRequest _$$_CreateProgramRequestFromJson(Map json) =>
       programName: json['program_name'] as String,
       frequency:
           (json['frequency'] as List<dynamic>).map((e) => e as int).toList(),
-      runs: json['runs'] as List<dynamic>,
+      runs: (json['runs'] as List<dynamic>)
+          .map((e) => RunCreation.fromJson(Map<String, dynamic>.from(e as Map)))
+          .toList(),
     );
 
 Map<String, dynamic> _$$_CreateProgramRequestToJson(
@@ -19,5 +21,5 @@ Map<String, dynamic> _$$_CreateProgramRequestToJson(
     <String, dynamic>{
       'program_name': instance.programName,
       'frequency': instance.frequency,
-      'runs': instance.runs,
+      'runs': instance.runs.map((e) => e.toJson()).toList(),
     };
