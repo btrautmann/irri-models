@@ -7,12 +7,10 @@ part of 'run_zone_response.dart';
 // **************************************************************************
 
 _$_RunZoneResponse _$$_RunZoneResponseFromJson(Map json) => _$_RunZoneResponse(
-      zones: (json['zones'] as List<dynamic>)
-          .map((e) => Zone.fromJson(Map<String, dynamic>.from(e as Map)))
-          .toList(),
+      zone: Zone.fromJson(Map<String, dynamic>.from(json['zone'] as Map)),
     );
 
 Map<String, dynamic> _$$_RunZoneResponseToJson(_$_RunZoneResponse instance) =>
     <String, dynamic>{
-      'zones': instance.zones.map((e) => e.toJson()).toList(),
+      'zone': instance.zone.toJson(),
     };

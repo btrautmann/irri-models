@@ -20,8 +20,8 @@ RunZoneResponse _$RunZoneResponseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$RunZoneResponse {
-  @JsonKey(name: 'zones')
-  List<Zone> get zones => throw _privateConstructorUsedError;
+  @JsonKey(name: 'zone')
+  Zone get zone => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,7 +34,9 @@ abstract class $RunZoneResponseCopyWith<$Res> {
   factory $RunZoneResponseCopyWith(
           RunZoneResponse value, $Res Function(RunZoneResponse) then) =
       _$RunZoneResponseCopyWithImpl<$Res>;
-  $Res call({@JsonKey(name: 'zones') List<Zone> zones});
+  $Res call({@JsonKey(name: 'zone') Zone zone});
+
+  $ZoneCopyWith<$Res> get zone;
 }
 
 /// @nodoc
@@ -48,14 +50,21 @@ class _$RunZoneResponseCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? zones = freezed,
+    Object? zone = freezed,
   }) {
     return _then(_value.copyWith(
-      zones: zones == freezed
-          ? _value.zones
-          : zones // ignore: cast_nullable_to_non_nullable
-              as List<Zone>,
+      zone: zone == freezed
+          ? _value.zone
+          : zone // ignore: cast_nullable_to_non_nullable
+              as Zone,
     ));
+  }
+
+  @override
+  $ZoneCopyWith<$Res> get zone {
+    return $ZoneCopyWith<$Res>(_value.zone, (value) {
+      return _then(_value.copyWith(zone: value));
+    });
   }
 }
 
@@ -66,7 +75,10 @@ abstract class _$$_RunZoneResponseCopyWith<$Res>
           _$_RunZoneResponse value, $Res Function(_$_RunZoneResponse) then) =
       __$$_RunZoneResponseCopyWithImpl<$Res>;
   @override
-  $Res call({@JsonKey(name: 'zones') List<Zone> zones});
+  $Res call({@JsonKey(name: 'zone') Zone zone});
+
+  @override
+  $ZoneCopyWith<$Res> get zone;
 }
 
 /// @nodoc
@@ -82,13 +94,13 @@ class __$$_RunZoneResponseCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? zones = freezed,
+    Object? zone = freezed,
   }) {
     return _then(_$_RunZoneResponse(
-      zones: zones == freezed
-          ? _value._zones
-          : zones // ignore: cast_nullable_to_non_nullable
-              as List<Zone>,
+      zone: zone == freezed
+          ? _value.zone
+          : zone // ignore: cast_nullable_to_non_nullable
+              as Zone,
     ));
   }
 }
@@ -96,23 +108,18 @@ class __$$_RunZoneResponseCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_RunZoneResponse implements _RunZoneResponse {
-  _$_RunZoneResponse({@JsonKey(name: 'zones') required final List<Zone> zones})
-      : _zones = zones;
+  _$_RunZoneResponse({@JsonKey(name: 'zone') required this.zone});
 
   factory _$_RunZoneResponse.fromJson(Map<String, dynamic> json) =>
       _$$_RunZoneResponseFromJson(json);
 
-  final List<Zone> _zones;
   @override
-  @JsonKey(name: 'zones')
-  List<Zone> get zones {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_zones);
-  }
+  @JsonKey(name: 'zone')
+  final Zone zone;
 
   @override
   String toString() {
-    return 'RunZoneResponse(zones: $zones)';
+    return 'RunZoneResponse(zone: $zone)';
   }
 
   @override
@@ -120,13 +127,13 @@ class _$_RunZoneResponse implements _RunZoneResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_RunZoneResponse &&
-            const DeepCollectionEquality().equals(other._zones, _zones));
+            const DeepCollectionEquality().equals(other.zone, zone));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_zones));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(zone));
 
   @JsonKey(ignore: true)
   @override
@@ -140,16 +147,15 @@ class _$_RunZoneResponse implements _RunZoneResponse {
 }
 
 abstract class _RunZoneResponse implements RunZoneResponse {
-  factory _RunZoneResponse(
-          {@JsonKey(name: 'zones') required final List<Zone> zones}) =
+  factory _RunZoneResponse({@JsonKey(name: 'zone') required final Zone zone}) =
       _$_RunZoneResponse;
 
   factory _RunZoneResponse.fromJson(Map<String, dynamic> json) =
       _$_RunZoneResponse.fromJson;
 
   @override
-  @JsonKey(name: 'zones')
-  List<Zone> get zones;
+  @JsonKey(name: 'zone')
+  Zone get zone;
   @override
   @JsonKey(ignore: true)
   _$$_RunZoneResponseCopyWith<_$_RunZoneResponse> get copyWith =>
