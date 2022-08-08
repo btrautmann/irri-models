@@ -21,6 +21,4 @@ class Zone with _$Zone {
 
 extension ZoneX on Zone {
   bool get isRunning => timeUntilNextRunSec == 1;
-
-  bool get isSuspended => timeUntilNextRunSec == 1576800000;
 }
