@@ -26,10 +26,14 @@ mixin _$Zone {
   int get number => throw _privateConstructorUsedError;
   @JsonKey(name: 'zone_name')
   String get name => throw _privateConstructorUsedError;
-  @JsonKey(name: 'time_until_run_sec')
-  int get timeUntilNextRunSec => throw _privateConstructorUsedError;
-  @JsonKey(name: 'run_length_sec')
-  int get runLengthSec => throw _privateConstructorUsedError;
+  @JsonKey(name: 'is_running')
+  bool get isRunning => throw _privateConstructorUsedError;
+  @JsonKey(name: 'time_remaining_sec')
+  int get timeRemainingSec => throw _privateConstructorUsedError;
+  @JsonKey(name: 'next_run_start')
+  String? get nextRunStart => throw _privateConstructorUsedError;
+  @JsonKey(name: 'next_run_length_sec')
+  int get nextRunLengthSec => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -44,8 +48,10 @@ abstract class $ZoneCopyWith<$Res> {
       {@JsonKey(name: 'id') int id,
       @JsonKey(name: 'zone_num') int number,
       @JsonKey(name: 'zone_name') String name,
-      @JsonKey(name: 'time_until_run_sec') int timeUntilNextRunSec,
-      @JsonKey(name: 'run_length_sec') int runLengthSec});
+      @JsonKey(name: 'is_running') bool isRunning,
+      @JsonKey(name: 'time_remaining_sec') int timeRemainingSec,
+      @JsonKey(name: 'next_run_start') String? nextRunStart,
+      @JsonKey(name: 'next_run_length_sec') int nextRunLengthSec});
 }
 
 /// @nodoc
@@ -61,8 +67,10 @@ class _$ZoneCopyWithImpl<$Res> implements $ZoneCopyWith<$Res> {
     Object? id = freezed,
     Object? number = freezed,
     Object? name = freezed,
-    Object? timeUntilNextRunSec = freezed,
-    Object? runLengthSec = freezed,
+    Object? isRunning = freezed,
+    Object? timeRemainingSec = freezed,
+    Object? nextRunStart = freezed,
+    Object? nextRunLengthSec = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -77,13 +85,21 @@ class _$ZoneCopyWithImpl<$Res> implements $ZoneCopyWith<$Res> {
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      timeUntilNextRunSec: timeUntilNextRunSec == freezed
-          ? _value.timeUntilNextRunSec
-          : timeUntilNextRunSec // ignore: cast_nullable_to_non_nullable
+      isRunning: isRunning == freezed
+          ? _value.isRunning
+          : isRunning // ignore: cast_nullable_to_non_nullable
+              as bool,
+      timeRemainingSec: timeRemainingSec == freezed
+          ? _value.timeRemainingSec
+          : timeRemainingSec // ignore: cast_nullable_to_non_nullable
               as int,
-      runLengthSec: runLengthSec == freezed
-          ? _value.runLengthSec
-          : runLengthSec // ignore: cast_nullable_to_non_nullable
+      nextRunStart: nextRunStart == freezed
+          ? _value.nextRunStart
+          : nextRunStart // ignore: cast_nullable_to_non_nullable
+              as String?,
+      nextRunLengthSec: nextRunLengthSec == freezed
+          ? _value.nextRunLengthSec
+          : nextRunLengthSec // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -98,8 +114,10 @@ abstract class _$$_ZoneCopyWith<$Res> implements $ZoneCopyWith<$Res> {
       {@JsonKey(name: 'id') int id,
       @JsonKey(name: 'zone_num') int number,
       @JsonKey(name: 'zone_name') String name,
-      @JsonKey(name: 'time_until_run_sec') int timeUntilNextRunSec,
-      @JsonKey(name: 'run_length_sec') int runLengthSec});
+      @JsonKey(name: 'is_running') bool isRunning,
+      @JsonKey(name: 'time_remaining_sec') int timeRemainingSec,
+      @JsonKey(name: 'next_run_start') String? nextRunStart,
+      @JsonKey(name: 'next_run_length_sec') int nextRunLengthSec});
 }
 
 /// @nodoc
@@ -116,8 +134,10 @@ class __$$_ZoneCopyWithImpl<$Res> extends _$ZoneCopyWithImpl<$Res>
     Object? id = freezed,
     Object? number = freezed,
     Object? name = freezed,
-    Object? timeUntilNextRunSec = freezed,
-    Object? runLengthSec = freezed,
+    Object? isRunning = freezed,
+    Object? timeRemainingSec = freezed,
+    Object? nextRunStart = freezed,
+    Object? nextRunLengthSec = freezed,
   }) {
     return _then(_$_Zone(
       id: id == freezed
@@ -132,13 +152,21 @@ class __$$_ZoneCopyWithImpl<$Res> extends _$ZoneCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      timeUntilNextRunSec: timeUntilNextRunSec == freezed
-          ? _value.timeUntilNextRunSec
-          : timeUntilNextRunSec // ignore: cast_nullable_to_non_nullable
+      isRunning: isRunning == freezed
+          ? _value.isRunning
+          : isRunning // ignore: cast_nullable_to_non_nullable
+              as bool,
+      timeRemainingSec: timeRemainingSec == freezed
+          ? _value.timeRemainingSec
+          : timeRemainingSec // ignore: cast_nullable_to_non_nullable
               as int,
-      runLengthSec: runLengthSec == freezed
-          ? _value.runLengthSec
-          : runLengthSec // ignore: cast_nullable_to_non_nullable
+      nextRunStart: nextRunStart == freezed
+          ? _value.nextRunStart
+          : nextRunStart // ignore: cast_nullable_to_non_nullable
+              as String?,
+      nextRunLengthSec: nextRunLengthSec == freezed
+          ? _value.nextRunLengthSec
+          : nextRunLengthSec // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -151,8 +179,10 @@ class _$_Zone implements _Zone {
       {@JsonKey(name: 'id') required this.id,
       @JsonKey(name: 'zone_num') required this.number,
       @JsonKey(name: 'zone_name') required this.name,
-      @JsonKey(name: 'time_until_run_sec') required this.timeUntilNextRunSec,
-      @JsonKey(name: 'run_length_sec') required this.runLengthSec});
+      @JsonKey(name: 'is_running') required this.isRunning,
+      @JsonKey(name: 'time_remaining_sec') required this.timeRemainingSec,
+      @JsonKey(name: 'next_run_start') required this.nextRunStart,
+      @JsonKey(name: 'next_run_length_sec') required this.nextRunLengthSec});
 
   factory _$_Zone.fromJson(Map<String, dynamic> json) => _$$_ZoneFromJson(json);
 
@@ -166,15 +196,21 @@ class _$_Zone implements _Zone {
   @JsonKey(name: 'zone_name')
   final String name;
   @override
-  @JsonKey(name: 'time_until_run_sec')
-  final int timeUntilNextRunSec;
+  @JsonKey(name: 'is_running')
+  final bool isRunning;
   @override
-  @JsonKey(name: 'run_length_sec')
-  final int runLengthSec;
+  @JsonKey(name: 'time_remaining_sec')
+  final int timeRemainingSec;
+  @override
+  @JsonKey(name: 'next_run_start')
+  final String? nextRunStart;
+  @override
+  @JsonKey(name: 'next_run_length_sec')
+  final int nextRunLengthSec;
 
   @override
   String toString() {
-    return 'Zone(id: $id, number: $number, name: $name, timeUntilNextRunSec: $timeUntilNextRunSec, runLengthSec: $runLengthSec)';
+    return 'Zone(id: $id, number: $number, name: $name, isRunning: $isRunning, timeRemainingSec: $timeRemainingSec, nextRunStart: $nextRunStart, nextRunLengthSec: $nextRunLengthSec)';
   }
 
   @override
@@ -185,10 +221,13 @@ class _$_Zone implements _Zone {
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.number, number) &&
             const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other.isRunning, isRunning) &&
             const DeepCollectionEquality()
-                .equals(other.timeUntilNextRunSec, timeUntilNextRunSec) &&
+                .equals(other.timeRemainingSec, timeRemainingSec) &&
             const DeepCollectionEquality()
-                .equals(other.runLengthSec, runLengthSec));
+                .equals(other.nextRunStart, nextRunStart) &&
+            const DeepCollectionEquality()
+                .equals(other.nextRunLengthSec, nextRunLengthSec));
   }
 
   @JsonKey(ignore: true)
@@ -198,8 +237,10 @@ class _$_Zone implements _Zone {
       const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(number),
       const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(timeUntilNextRunSec),
-      const DeepCollectionEquality().hash(runLengthSec));
+      const DeepCollectionEquality().hash(isRunning),
+      const DeepCollectionEquality().hash(timeRemainingSec),
+      const DeepCollectionEquality().hash(nextRunStart),
+      const DeepCollectionEquality().hash(nextRunLengthSec));
 
   @JsonKey(ignore: true)
   @override
@@ -220,10 +261,14 @@ abstract class _Zone implements Zone {
           required final int number,
       @JsonKey(name: 'zone_name')
           required final String name,
-      @JsonKey(name: 'time_until_run_sec')
-          required final int timeUntilNextRunSec,
-      @JsonKey(name: 'run_length_sec')
-          required final int runLengthSec}) = _$_Zone;
+      @JsonKey(name: 'is_running')
+          required final bool isRunning,
+      @JsonKey(name: 'time_remaining_sec')
+          required final int timeRemainingSec,
+      @JsonKey(name: 'next_run_start')
+          required final String? nextRunStart,
+      @JsonKey(name: 'next_run_length_sec')
+          required final int nextRunLengthSec}) = _$_Zone;
 
   factory _Zone.fromJson(Map<String, dynamic> json) = _$_Zone.fromJson;
 
@@ -237,11 +282,17 @@ abstract class _Zone implements Zone {
   @JsonKey(name: 'zone_name')
   String get name;
   @override
-  @JsonKey(name: 'time_until_run_sec')
-  int get timeUntilNextRunSec;
+  @JsonKey(name: 'is_running')
+  bool get isRunning;
   @override
-  @JsonKey(name: 'run_length_sec')
-  int get runLengthSec;
+  @JsonKey(name: 'time_remaining_sec')
+  int get timeRemainingSec;
+  @override
+  @JsonKey(name: 'next_run_start')
+  String? get nextRunStart;
+  @override
+  @JsonKey(name: 'next_run_length_sec')
+  int get nextRunLengthSec;
   @override
   @JsonKey(ignore: true)
   _$$_ZoneCopyWith<_$_Zone> get copyWith => throw _privateConstructorUsedError;
