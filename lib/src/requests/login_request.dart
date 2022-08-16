@@ -7,7 +7,6 @@ part 'login_request.g.dart';
 class LoginRequest with _$LoginRequest {
   factory LoginRequest({
     required String type,
-    required String timezone,
   }) = _LoginRequest;
 
   factory LoginRequest.fromJson(Map<String, dynamic> json) =>
