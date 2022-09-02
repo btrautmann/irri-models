@@ -11,9 +11,7 @@ class UpdateProgramRequest with _$UpdateProgramRequest {
     @JsonKey(name: 'program_id') required int programId,
     @JsonKey(name: 'program_name') required String programName,
     @JsonKey(name: 'frequency') required List<int> frequency,
-    @JsonKey(name: 'runs_to_create') required List<RunCreation> runsToCreate,
-    @JsonKey(name: 'runs_to_update') required List<Run> runsToUpdate,
-    @JsonKey(name: 'runs_to_delete') required List<Run> runsToDelete,
+    @JsonKey(name: 'runs') required List<RunCreation> runs,
   }) = _UpdateProgramRequest;
 
   factory UpdateProgramRequest.fromJson(
