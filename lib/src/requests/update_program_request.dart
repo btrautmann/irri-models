@@ -1,4 +1,3 @@
-import 'package:api_models/src/models/run.dart';
 import 'package:api_models/src/models/run_creation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 

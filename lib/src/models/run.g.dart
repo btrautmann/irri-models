@@ -13,6 +13,7 @@ _$_Run _$$_RunFromJson(Map json) => _$_Run(
       durationSeconds: json['duration_seconds'] as int,
       startHour: json['start_hour'] as int,
       startMinute: json['start_minute'] as int,
+      lastRunTime: DateTime.parse(json['last_run_time'] as String),
     );
 
 Map<String, dynamic> _$$_RunToJson(_$_Run instance) => <String, dynamic>{
@@ -22,4 +23,5 @@ Map<String, dynamic> _$$_RunToJson(_$_Run instance) => <String, dynamic>{
       'duration_seconds': instance.durationSeconds,
       'start_hour': instance.startHour,
       'start_minute': instance.startMinute,
+      'last_run_time': instance.lastRunTime.toIso8601String(),
     };

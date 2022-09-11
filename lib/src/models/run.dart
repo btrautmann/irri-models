@@ -12,6 +12,7 @@ class Run with _$Run {
     @JsonKey(name: 'duration_seconds') required int durationSeconds,
     @JsonKey(name: 'start_hour') required int startHour,
     @JsonKey(name: 'start_minute') required int startMinute,
+    @JsonKey(name: 'last_run_time') required DateTime lastRunTime,
   }) = _Run;
 
   factory Run.fromJson(Map<String, dynamic> json) => _$RunFromJson(json);
