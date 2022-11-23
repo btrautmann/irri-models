@@ -4,3 +4,4 @@ export 'login_request.dart';
 export 'run_zone_request.dart';
 export 'stop_zone_request.dart';
 export 'update_program_request.dart';
+export 'update_zone_request.dart';
