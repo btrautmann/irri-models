@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'customer.dart';
 
@@ -34,35 +34,39 @@ mixin _$Customer {
 /// @nodoc
 abstract class $CustomerCopyWith<$Res> {
   factory $CustomerCopyWith(Customer value, $Res Function(Customer) then) =
-      _$CustomerCopyWithImpl<$Res>;
+      _$CustomerCopyWithImpl<$Res, Customer>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'customer_id') int customerId,
       @JsonKey(name: 'active_controller_id') int activeControllerId});
 }
 
 /// @nodoc
-class _$CustomerCopyWithImpl<$Res> implements $CustomerCopyWith<$Res> {
+class _$CustomerCopyWithImpl<$Res, $Val extends Customer>
+    implements $CustomerCopyWith<$Res> {
   _$CustomerCopyWithImpl(this._value, this._then);
 
-  final Customer _value;
   // ignore: unused_field
-  final $Res Function(Customer) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? customerId = freezed,
-    Object? activeControllerId = freezed,
+    Object? customerId = null,
+    Object? activeControllerId = null,
   }) {
     return _then(_value.copyWith(
-      customerId: customerId == freezed
+      customerId: null == customerId
           ? _value.customerId
           : customerId // ignore: cast_nullable_to_non_nullable
               as int,
-      activeControllerId: activeControllerId == freezed
+      activeControllerId: null == activeControllerId
           ? _value.activeControllerId
           : activeControllerId // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 }
 
@@ -72,32 +76,32 @@ abstract class _$$_CustomerCopyWith<$Res> implements $CustomerCopyWith<$Res> {
           _$_Customer value, $Res Function(_$_Customer) then) =
       __$$_CustomerCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'customer_id') int customerId,
       @JsonKey(name: 'active_controller_id') int activeControllerId});
 }
 
 /// @nodoc
-class __$$_CustomerCopyWithImpl<$Res> extends _$CustomerCopyWithImpl<$Res>
+class __$$_CustomerCopyWithImpl<$Res>
+    extends _$CustomerCopyWithImpl<$Res, _$_Customer>
     implements _$$_CustomerCopyWith<$Res> {
   __$$_CustomerCopyWithImpl(
       _$_Customer _value, $Res Function(_$_Customer) _then)
-      : super(_value, (v) => _then(v as _$_Customer));
+      : super(_value, _then);
 
-  @override
-  _$_Customer get _value => super._value as _$_Customer;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? customerId = freezed,
-    Object? activeControllerId = freezed,
+    Object? customerId = null,
+    Object? activeControllerId = null,
   }) {
     return _then(_$_Customer(
-      customerId: customerId == freezed
+      customerId: null == customerId
           ? _value.customerId
           : customerId // ignore: cast_nullable_to_non_nullable
               as int,
-      activeControllerId: activeControllerId == freezed
+      activeControllerId: null == activeControllerId
           ? _value.activeControllerId
           : activeControllerId // ignore: cast_nullable_to_non_nullable
               as int,
@@ -132,27 +136,27 @@ class _$_Customer implements _Customer {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Customer &&
-            const DeepCollectionEquality()
-                .equals(other.customerId, customerId) &&
-            const DeepCollectionEquality()
-                .equals(other.activeControllerId, activeControllerId));
+            (identical(other.customerId, customerId) ||
+                other.customerId == customerId) &&
+            (identical(other.activeControllerId, activeControllerId) ||
+                other.activeControllerId == activeControllerId));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(customerId),
-      const DeepCollectionEquality().hash(activeControllerId));
+  int get hashCode => Object.hash(runtimeType, customerId, activeControllerId);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_CustomerCopyWith<_$_Customer> get copyWith =>
       __$$_CustomerCopyWithImpl<_$_Customer>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CustomerToJson(this);
+    return _$$_CustomerToJson(
+      this,
+    );
   }
 }
 

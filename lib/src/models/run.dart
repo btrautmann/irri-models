@@ -7,12 +7,9 @@ part 'run.g.dart';
 class Run with _$Run {
   factory Run({
     @JsonKey(name: 'id') required int id,
-    @JsonKey(name: 'program_id') required int programId,
+    @JsonKey(name: 'run_group_id') required int runGroupId,
     @JsonKey(name: 'zone_id') required int zoneId,
-    @JsonKey(name: 'duration_seconds') required int durationSeconds,
-    @JsonKey(name: 'start_hour') required int startHour,
-    @JsonKey(name: 'start_minute') required int startMinute,
-    @JsonKey(name: 'last_run_time') required DateTime lastRunTime,
+    @JsonKey(name: 'last_run_time') DateTime? lastRunTime,
   }) = _Run;
 
   factory Run.fromJson(Map<String, dynamic> json) => _$RunFromJson(json);

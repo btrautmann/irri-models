@@ -12,7 +12,8 @@ _$_CreateProgramRequest _$$_CreateProgramRequestFromJson(Map json) =>
       frequency:
           (json['frequency'] as List<dynamic>).map((e) => e as int).toList(),
       runs: (json['runs'] as List<dynamic>)
-          .map((e) => RunCreation.fromJson(Map<String, dynamic>.from(e as Map)))
+          .map((e) =>
+              RunGroupCreation.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
     );
 

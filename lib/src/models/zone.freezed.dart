@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'zone.dart';
 
@@ -43,7 +43,8 @@ mixin _$Zone {
 /// @nodoc
 abstract class $ZoneCopyWith<$Res> {
   factory $ZoneCopyWith(Zone value, $Res Function(Zone) then) =
-      _$ZoneCopyWithImpl<$Res>;
+      _$ZoneCopyWithImpl<$Res, Zone>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'id') int id,
       @JsonKey(name: 'zone_num') int number,
@@ -55,53 +56,56 @@ abstract class $ZoneCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ZoneCopyWithImpl<$Res> implements $ZoneCopyWith<$Res> {
+class _$ZoneCopyWithImpl<$Res, $Val extends Zone>
+    implements $ZoneCopyWith<$Res> {
   _$ZoneCopyWithImpl(this._value, this._then);
 
-  final Zone _value;
   // ignore: unused_field
-  final $Res Function(Zone) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? number = freezed,
-    Object? name = freezed,
-    Object? isRunning = freezed,
-    Object? timeRemainingSec = freezed,
+    Object? id = null,
+    Object? number = null,
+    Object? name = null,
+    Object? isRunning = null,
+    Object? timeRemainingSec = null,
     Object? nextRunStart = freezed,
-    Object? nextRunLengthSec = freezed,
+    Object? nextRunLengthSec = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      number: number == freezed
+      number: null == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
               as int,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      isRunning: isRunning == freezed
+      isRunning: null == isRunning
           ? _value.isRunning
           : isRunning // ignore: cast_nullable_to_non_nullable
               as bool,
-      timeRemainingSec: timeRemainingSec == freezed
+      timeRemainingSec: null == timeRemainingSec
           ? _value.timeRemainingSec
           : timeRemainingSec // ignore: cast_nullable_to_non_nullable
               as int,
-      nextRunStart: nextRunStart == freezed
+      nextRunStart: freezed == nextRunStart
           ? _value.nextRunStart
           : nextRunStart // ignore: cast_nullable_to_non_nullable
               as String?,
-      nextRunLengthSec: nextRunLengthSec == freezed
+      nextRunLengthSec: null == nextRunLengthSec
           ? _value.nextRunLengthSec
           : nextRunLengthSec // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 }
 
@@ -110,6 +114,7 @@ abstract class _$$_ZoneCopyWith<$Res> implements $ZoneCopyWith<$Res> {
   factory _$$_ZoneCopyWith(_$_Zone value, $Res Function(_$_Zone) then) =
       __$$_ZoneCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'id') int id,
       @JsonKey(name: 'zone_num') int number,
@@ -121,50 +126,48 @@ abstract class _$$_ZoneCopyWith<$Res> implements $ZoneCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_ZoneCopyWithImpl<$Res> extends _$ZoneCopyWithImpl<$Res>
+class __$$_ZoneCopyWithImpl<$Res> extends _$ZoneCopyWithImpl<$Res, _$_Zone>
     implements _$$_ZoneCopyWith<$Res> {
   __$$_ZoneCopyWithImpl(_$_Zone _value, $Res Function(_$_Zone) _then)
-      : super(_value, (v) => _then(v as _$_Zone));
+      : super(_value, _then);
 
-  @override
-  _$_Zone get _value => super._value as _$_Zone;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? number = freezed,
-    Object? name = freezed,
-    Object? isRunning = freezed,
-    Object? timeRemainingSec = freezed,
+    Object? id = null,
+    Object? number = null,
+    Object? name = null,
+    Object? isRunning = null,
+    Object? timeRemainingSec = null,
     Object? nextRunStart = freezed,
-    Object? nextRunLengthSec = freezed,
+    Object? nextRunLengthSec = null,
   }) {
     return _then(_$_Zone(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      number: number == freezed
+      number: null == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
               as int,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      isRunning: isRunning == freezed
+      isRunning: null == isRunning
           ? _value.isRunning
           : isRunning // ignore: cast_nullable_to_non_nullable
               as bool,
-      timeRemainingSec: timeRemainingSec == freezed
+      timeRemainingSec: null == timeRemainingSec
           ? _value.timeRemainingSec
           : timeRemainingSec // ignore: cast_nullable_to_non_nullable
               as int,
-      nextRunStart: nextRunStart == freezed
+      nextRunStart: freezed == nextRunStart
           ? _value.nextRunStart
           : nextRunStart // ignore: cast_nullable_to_non_nullable
               as String?,
-      nextRunLengthSec: nextRunLengthSec == freezed
+      nextRunLengthSec: null == nextRunLengthSec
           ? _value.nextRunLengthSec
           : nextRunLengthSec // ignore: cast_nullable_to_non_nullable
               as int,
@@ -218,38 +221,35 @@ class _$_Zone implements _Zone {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Zone &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.number, number) &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.isRunning, isRunning) &&
-            const DeepCollectionEquality()
-                .equals(other.timeRemainingSec, timeRemainingSec) &&
-            const DeepCollectionEquality()
-                .equals(other.nextRunStart, nextRunStart) &&
-            const DeepCollectionEquality()
-                .equals(other.nextRunLengthSec, nextRunLengthSec));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.number, number) || other.number == number) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.isRunning, isRunning) ||
+                other.isRunning == isRunning) &&
+            (identical(other.timeRemainingSec, timeRemainingSec) ||
+                other.timeRemainingSec == timeRemainingSec) &&
+            (identical(other.nextRunStart, nextRunStart) ||
+                other.nextRunStart == nextRunStart) &&
+            (identical(other.nextRunLengthSec, nextRunLengthSec) ||
+                other.nextRunLengthSec == nextRunLengthSec));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(number),
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(isRunning),
-      const DeepCollectionEquality().hash(timeRemainingSec),
-      const DeepCollectionEquality().hash(nextRunStart),
-      const DeepCollectionEquality().hash(nextRunLengthSec));
+  int get hashCode => Object.hash(runtimeType, id, number, name, isRunning,
+      timeRemainingSec, nextRunStart, nextRunLengthSec);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ZoneCopyWith<_$_Zone> get copyWith =>
       __$$_ZoneCopyWithImpl<_$_Zone>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ZoneToJson(this);
+    return _$$_ZoneToJson(
+      this,
+    );
   }
 }
 

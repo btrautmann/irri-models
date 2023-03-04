@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'update_zone_response.dart';
 
@@ -33,37 +33,41 @@ mixin _$UpdateZoneResponse {
 abstract class $UpdateZoneResponseCopyWith<$Res> {
   factory $UpdateZoneResponseCopyWith(
           UpdateZoneResponse value, $Res Function(UpdateZoneResponse) then) =
-      _$UpdateZoneResponseCopyWithImpl<$Res>;
+      _$UpdateZoneResponseCopyWithImpl<$Res, UpdateZoneResponse>;
+  @useResult
   $Res call({@JsonKey(name: 'zone') Zone zone});
 
   $ZoneCopyWith<$Res> get zone;
 }
 
 /// @nodoc
-class _$UpdateZoneResponseCopyWithImpl<$Res>
+class _$UpdateZoneResponseCopyWithImpl<$Res, $Val extends UpdateZoneResponse>
     implements $UpdateZoneResponseCopyWith<$Res> {
   _$UpdateZoneResponseCopyWithImpl(this._value, this._then);
 
-  final UpdateZoneResponse _value;
   // ignore: unused_field
-  final $Res Function(UpdateZoneResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? zone = freezed,
+    Object? zone = null,
   }) {
     return _then(_value.copyWith(
-      zone: zone == freezed
+      zone: null == zone
           ? _value.zone
           : zone // ignore: cast_nullable_to_non_nullable
               as Zone,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ZoneCopyWith<$Res> get zone {
     return $ZoneCopyWith<$Res>(_value.zone, (value) {
-      return _then(_value.copyWith(zone: value));
+      return _then(_value.copyWith(zone: value) as $Val);
     });
   }
 }
@@ -75,6 +79,7 @@ abstract class _$$_UpdateZoneResponseCopyWith<$Res>
           $Res Function(_$_UpdateZoneResponse) then) =
       __$$_UpdateZoneResponseCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({@JsonKey(name: 'zone') Zone zone});
 
   @override
@@ -83,21 +88,19 @@ abstract class _$$_UpdateZoneResponseCopyWith<$Res>
 
 /// @nodoc
 class __$$_UpdateZoneResponseCopyWithImpl<$Res>
-    extends _$UpdateZoneResponseCopyWithImpl<$Res>
+    extends _$UpdateZoneResponseCopyWithImpl<$Res, _$_UpdateZoneResponse>
     implements _$$_UpdateZoneResponseCopyWith<$Res> {
   __$$_UpdateZoneResponseCopyWithImpl(
       _$_UpdateZoneResponse _value, $Res Function(_$_UpdateZoneResponse) _then)
-      : super(_value, (v) => _then(v as _$_UpdateZoneResponse));
+      : super(_value, _then);
 
-  @override
-  _$_UpdateZoneResponse get _value => super._value as _$_UpdateZoneResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? zone = freezed,
+    Object? zone = null,
   }) {
     return _then(_$_UpdateZoneResponse(
-      zone: zone == freezed
+      zone: null == zone
           ? _value.zone
           : zone // ignore: cast_nullable_to_non_nullable
               as Zone,
@@ -127,23 +130,25 @@ class _$_UpdateZoneResponse implements _UpdateZoneResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_UpdateZoneResponse &&
-            const DeepCollectionEquality().equals(other.zone, zone));
+            (identical(other.zone, zone) || other.zone == zone));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(zone));
+  int get hashCode => Object.hash(runtimeType, zone);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_UpdateZoneResponseCopyWith<_$_UpdateZoneResponse> get copyWith =>
       __$$_UpdateZoneResponseCopyWithImpl<_$_UpdateZoneResponse>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UpdateZoneResponseToJson(this);
+    return _$$_UpdateZoneResponseToJson(
+      this,
+    );
   }
 }
 

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'program.dart';
 
@@ -26,8 +26,8 @@ mixin _$Program {
   String get name => throw _privateConstructorUsedError;
   @JsonKey(name: 'frequency')
   List<int> get frequency => throw _privateConstructorUsedError;
-  @JsonKey(name: 'runs')
-  List<Run> get runs => throw _privateConstructorUsedError;
+  @JsonKey(name: 'run_groups')
+  List<RunGroup> get runs => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,47 +37,51 @@ mixin _$Program {
 /// @nodoc
 abstract class $ProgramCopyWith<$Res> {
   factory $ProgramCopyWith(Program value, $Res Function(Program) then) =
-      _$ProgramCopyWithImpl<$Res>;
+      _$ProgramCopyWithImpl<$Res, Program>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'id') int id,
       @JsonKey(name: 'name') String name,
       @JsonKey(name: 'frequency') List<int> frequency,
-      @JsonKey(name: 'runs') List<Run> runs});
+      @JsonKey(name: 'run_groups') List<RunGroup> runs});
 }
 
 /// @nodoc
-class _$ProgramCopyWithImpl<$Res> implements $ProgramCopyWith<$Res> {
+class _$ProgramCopyWithImpl<$Res, $Val extends Program>
+    implements $ProgramCopyWith<$Res> {
   _$ProgramCopyWithImpl(this._value, this._then);
 
-  final Program _value;
   // ignore: unused_field
-  final $Res Function(Program) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? frequency = freezed,
-    Object? runs = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? frequency = null,
+    Object? runs = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      frequency: frequency == freezed
+      frequency: null == frequency
           ? _value.frequency
           : frequency // ignore: cast_nullable_to_non_nullable
               as List<int>,
-      runs: runs == freezed
+      runs: null == runs
           ? _value.runs
           : runs // ignore: cast_nullable_to_non_nullable
-              as List<Run>,
-    ));
+              as List<RunGroup>,
+    ) as $Val);
   }
 }
 
@@ -87,46 +91,46 @@ abstract class _$$_ProgramCopyWith<$Res> implements $ProgramCopyWith<$Res> {
           _$_Program value, $Res Function(_$_Program) then) =
       __$$_ProgramCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'id') int id,
       @JsonKey(name: 'name') String name,
       @JsonKey(name: 'frequency') List<int> frequency,
-      @JsonKey(name: 'runs') List<Run> runs});
+      @JsonKey(name: 'run_groups') List<RunGroup> runs});
 }
 
 /// @nodoc
-class __$$_ProgramCopyWithImpl<$Res> extends _$ProgramCopyWithImpl<$Res>
+class __$$_ProgramCopyWithImpl<$Res>
+    extends _$ProgramCopyWithImpl<$Res, _$_Program>
     implements _$$_ProgramCopyWith<$Res> {
   __$$_ProgramCopyWithImpl(_$_Program _value, $Res Function(_$_Program) _then)
-      : super(_value, (v) => _then(v as _$_Program));
+      : super(_value, _then);
 
-  @override
-  _$_Program get _value => super._value as _$_Program;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? frequency = freezed,
-    Object? runs = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? frequency = null,
+    Object? runs = null,
   }) {
     return _then(_$_Program(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      frequency: frequency == freezed
+      frequency: null == frequency
           ? _value._frequency
           : frequency // ignore: cast_nullable_to_non_nullable
               as List<int>,
-      runs: runs == freezed
+      runs: null == runs
           ? _value._runs
           : runs // ignore: cast_nullable_to_non_nullable
-              as List<Run>,
+              as List<RunGroup>,
     ));
   }
 }
@@ -138,7 +142,7 @@ class _$_Program implements _Program {
       {@JsonKey(name: 'id') required this.id,
       @JsonKey(name: 'name') required this.name,
       @JsonKey(name: 'frequency') required final List<int> frequency,
-      @JsonKey(name: 'runs') required final List<Run> runs})
+      @JsonKey(name: 'run_groups') required final List<RunGroup> runs})
       : _frequency = frequency,
         _runs = runs;
 
@@ -155,14 +159,16 @@ class _$_Program implements _Program {
   @override
   @JsonKey(name: 'frequency')
   List<int> get frequency {
+    if (_frequency is EqualUnmodifiableListView) return _frequency;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_frequency);
   }
 
-  final List<Run> _runs;
+  final List<RunGroup> _runs;
   @override
-  @JsonKey(name: 'runs')
-  List<Run> get runs {
+  @JsonKey(name: 'run_groups')
+  List<RunGroup> get runs {
+    if (_runs is EqualUnmodifiableListView) return _runs;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_runs);
   }
@@ -177,8 +183,8 @@ class _$_Program implements _Program {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Program &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.name, name) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
             const DeepCollectionEquality()
                 .equals(other._frequency, _frequency) &&
             const DeepCollectionEquality().equals(other._runs, _runs));
@@ -188,28 +194,32 @@ class _$_Program implements _Program {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(name),
+      id,
+      name,
       const DeepCollectionEquality().hash(_frequency),
       const DeepCollectionEquality().hash(_runs));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ProgramCopyWith<_$_Program> get copyWith =>
       __$$_ProgramCopyWithImpl<_$_Program>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ProgramToJson(this);
+    return _$$_ProgramToJson(
+      this,
+    );
   }
 }
 
 abstract class _Program implements Program {
   factory _Program(
-      {@JsonKey(name: 'id') required final int id,
-      @JsonKey(name: 'name') required final String name,
-      @JsonKey(name: 'frequency') required final List<int> frequency,
-      @JsonKey(name: 'runs') required final List<Run> runs}) = _$_Program;
+          {@JsonKey(name: 'id') required final int id,
+          @JsonKey(name: 'name') required final String name,
+          @JsonKey(name: 'frequency') required final List<int> frequency,
+          @JsonKey(name: 'run_groups') required final List<RunGroup> runs}) =
+      _$_Program;
 
   factory _Program.fromJson(Map<String, dynamic> json) = _$_Program.fromJson;
 
@@ -223,8 +233,8 @@ abstract class _Program implements Program {
   @JsonKey(name: 'frequency')
   List<int> get frequency;
   @override
-  @JsonKey(name: 'runs')
-  List<Run> get runs;
+  @JsonKey(name: 'run_groups')
+  List<RunGroup> get runs;
   @override
   @JsonKey(ignore: true)
   _$$_ProgramCopyWith<_$_Program> get copyWith =>

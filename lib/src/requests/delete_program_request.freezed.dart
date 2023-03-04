@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'delete_program_request.dart';
 
@@ -33,29 +33,33 @@ mixin _$DeleteProgramRequest {
 abstract class $DeleteProgramRequestCopyWith<$Res> {
   factory $DeleteProgramRequestCopyWith(DeleteProgramRequest value,
           $Res Function(DeleteProgramRequest) then) =
-      _$DeleteProgramRequestCopyWithImpl<$Res>;
+      _$DeleteProgramRequestCopyWithImpl<$Res, DeleteProgramRequest>;
+  @useResult
   $Res call({@JsonKey(name: 'program_id') int programId});
 }
 
 /// @nodoc
-class _$DeleteProgramRequestCopyWithImpl<$Res>
+class _$DeleteProgramRequestCopyWithImpl<$Res,
+        $Val extends DeleteProgramRequest>
     implements $DeleteProgramRequestCopyWith<$Res> {
   _$DeleteProgramRequestCopyWithImpl(this._value, this._then);
 
-  final DeleteProgramRequest _value;
   // ignore: unused_field
-  final $Res Function(DeleteProgramRequest) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? programId = freezed,
+    Object? programId = null,
   }) {
     return _then(_value.copyWith(
-      programId: programId == freezed
+      programId: null == programId
           ? _value.programId
           : programId // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 }
 
@@ -66,26 +70,25 @@ abstract class _$$_DeleteProgramRequestCopyWith<$Res>
           $Res Function(_$_DeleteProgramRequest) then) =
       __$$_DeleteProgramRequestCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({@JsonKey(name: 'program_id') int programId});
 }
 
 /// @nodoc
 class __$$_DeleteProgramRequestCopyWithImpl<$Res>
-    extends _$DeleteProgramRequestCopyWithImpl<$Res>
+    extends _$DeleteProgramRequestCopyWithImpl<$Res, _$_DeleteProgramRequest>
     implements _$$_DeleteProgramRequestCopyWith<$Res> {
   __$$_DeleteProgramRequestCopyWithImpl(_$_DeleteProgramRequest _value,
       $Res Function(_$_DeleteProgramRequest) _then)
-      : super(_value, (v) => _then(v as _$_DeleteProgramRequest));
+      : super(_value, _then);
 
-  @override
-  _$_DeleteProgramRequest get _value => super._value as _$_DeleteProgramRequest;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? programId = freezed,
+    Object? programId = null,
   }) {
     return _then(_$_DeleteProgramRequest(
-      programId: programId == freezed
+      programId: null == programId
           ? _value.programId
           : programId // ignore: cast_nullable_to_non_nullable
               as int,
@@ -116,23 +119,26 @@ class _$_DeleteProgramRequest implements _DeleteProgramRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_DeleteProgramRequest &&
-            const DeepCollectionEquality().equals(other.programId, programId));
+            (identical(other.programId, programId) ||
+                other.programId == programId));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(programId));
+  int get hashCode => Object.hash(runtimeType, programId);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_DeleteProgramRequestCopyWith<_$_DeleteProgramRequest> get copyWith =>
       __$$_DeleteProgramRequestCopyWithImpl<_$_DeleteProgramRequest>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DeleteProgramRequestToJson(this);
+    return _$$_DeleteProgramRequestToJson(
+      this,
+    );
   }
 }
 

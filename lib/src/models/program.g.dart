@@ -11,8 +11,8 @@ _$_Program _$$_ProgramFromJson(Map json) => _$_Program(
       name: json['name'] as String,
       frequency:
           (json['frequency'] as List<dynamic>).map((e) => e as int).toList(),
-      runs: (json['runs'] as List<dynamic>)
-          .map((e) => Run.fromJson(Map<String, dynamic>.from(e as Map)))
+      runs: (json['run_groups'] as List<dynamic>)
+          .map((e) => RunGroup.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
     );
 
@@ -21,5 +21,5 @@ Map<String, dynamic> _$$_ProgramToJson(_$_Program instance) =>
       'id': instance.id,
       'name': instance.name,
       'frequency': instance.frequency,
-      'runs': instance.runs.map((e) => e.toJson()).toList(),
+      'run_groups': instance.runs.map((e) => e.toJson()).toList(),
     };

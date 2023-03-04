@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'get_programs_response.dart';
 
@@ -33,29 +33,32 @@ mixin _$GetProgramsResponse {
 abstract class $GetProgramsResponseCopyWith<$Res> {
   factory $GetProgramsResponseCopyWith(
           GetProgramsResponse value, $Res Function(GetProgramsResponse) then) =
-      _$GetProgramsResponseCopyWithImpl<$Res>;
+      _$GetProgramsResponseCopyWithImpl<$Res, GetProgramsResponse>;
+  @useResult
   $Res call({@JsonKey(name: 'programs') List<Program> programs});
 }
 
 /// @nodoc
-class _$GetProgramsResponseCopyWithImpl<$Res>
+class _$GetProgramsResponseCopyWithImpl<$Res, $Val extends GetProgramsResponse>
     implements $GetProgramsResponseCopyWith<$Res> {
   _$GetProgramsResponseCopyWithImpl(this._value, this._then);
 
-  final GetProgramsResponse _value;
   // ignore: unused_field
-  final $Res Function(GetProgramsResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? programs = freezed,
+    Object? programs = null,
   }) {
     return _then(_value.copyWith(
-      programs: programs == freezed
+      programs: null == programs
           ? _value.programs
           : programs // ignore: cast_nullable_to_non_nullable
               as List<Program>,
-    ));
+    ) as $Val);
   }
 }
 
@@ -66,26 +69,25 @@ abstract class _$$_GetProgramsResponseCopyWith<$Res>
           $Res Function(_$_GetProgramsResponse) then) =
       __$$_GetProgramsResponseCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({@JsonKey(name: 'programs') List<Program> programs});
 }
 
 /// @nodoc
 class __$$_GetProgramsResponseCopyWithImpl<$Res>
-    extends _$GetProgramsResponseCopyWithImpl<$Res>
+    extends _$GetProgramsResponseCopyWithImpl<$Res, _$_GetProgramsResponse>
     implements _$$_GetProgramsResponseCopyWith<$Res> {
   __$$_GetProgramsResponseCopyWithImpl(_$_GetProgramsResponse _value,
       $Res Function(_$_GetProgramsResponse) _then)
-      : super(_value, (v) => _then(v as _$_GetProgramsResponse));
+      : super(_value, _then);
 
-  @override
-  _$_GetProgramsResponse get _value => super._value as _$_GetProgramsResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? programs = freezed,
+    Object? programs = null,
   }) {
     return _then(_$_GetProgramsResponse(
-      programs: programs == freezed
+      programs: null == programs
           ? _value._programs
           : programs // ignore: cast_nullable_to_non_nullable
               as List<Program>,
@@ -107,6 +109,7 @@ class _$_GetProgramsResponse implements _GetProgramsResponse {
   @override
   @JsonKey(name: 'programs')
   List<Program> get programs {
+    if (_programs is EqualUnmodifiableListView) return _programs;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_programs);
   }
@@ -131,13 +134,16 @@ class _$_GetProgramsResponse implements _GetProgramsResponse {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_GetProgramsResponseCopyWith<_$_GetProgramsResponse> get copyWith =>
       __$$_GetProgramsResponseCopyWithImpl<_$_GetProgramsResponse>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GetProgramsResponseToJson(this);
+    return _$$_GetProgramsResponseToJson(
+      this,
+    );
   }
 }
 

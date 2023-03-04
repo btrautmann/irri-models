@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'get_customer_response.dart';
 
@@ -35,7 +35,8 @@ mixin _$GetCustomerResponse {
 abstract class $GetCustomerResponseCopyWith<$Res> {
   factory $GetCustomerResponseCopyWith(
           GetCustomerResponse value, $Res Function(GetCustomerResponse) then) =
-      _$GetCustomerResponseCopyWithImpl<$Res>;
+      _$GetCustomerResponseCopyWithImpl<$Res, GetCustomerResponse>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'customer') Customer customer,
       @JsonKey(name: 'zones') List<Zone> zones});
@@ -44,35 +45,38 @@ abstract class $GetCustomerResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$GetCustomerResponseCopyWithImpl<$Res>
+class _$GetCustomerResponseCopyWithImpl<$Res, $Val extends GetCustomerResponse>
     implements $GetCustomerResponseCopyWith<$Res> {
   _$GetCustomerResponseCopyWithImpl(this._value, this._then);
 
-  final GetCustomerResponse _value;
   // ignore: unused_field
-  final $Res Function(GetCustomerResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? customer = freezed,
-    Object? zones = freezed,
+    Object? customer = null,
+    Object? zones = null,
   }) {
     return _then(_value.copyWith(
-      customer: customer == freezed
+      customer: null == customer
           ? _value.customer
           : customer // ignore: cast_nullable_to_non_nullable
               as Customer,
-      zones: zones == freezed
+      zones: null == zones
           ? _value.zones
           : zones // ignore: cast_nullable_to_non_nullable
               as List<Zone>,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CustomerCopyWith<$Res> get customer {
     return $CustomerCopyWith<$Res>(_value.customer, (value) {
-      return _then(_value.copyWith(customer: value));
+      return _then(_value.copyWith(customer: value) as $Val);
     });
   }
 }
@@ -84,6 +88,7 @@ abstract class _$$_GetCustomerResponseCopyWith<$Res>
           $Res Function(_$_GetCustomerResponse) then) =
       __$$_GetCustomerResponseCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'customer') Customer customer,
       @JsonKey(name: 'zones') List<Zone> zones});
@@ -94,26 +99,24 @@ abstract class _$$_GetCustomerResponseCopyWith<$Res>
 
 /// @nodoc
 class __$$_GetCustomerResponseCopyWithImpl<$Res>
-    extends _$GetCustomerResponseCopyWithImpl<$Res>
+    extends _$GetCustomerResponseCopyWithImpl<$Res, _$_GetCustomerResponse>
     implements _$$_GetCustomerResponseCopyWith<$Res> {
   __$$_GetCustomerResponseCopyWithImpl(_$_GetCustomerResponse _value,
       $Res Function(_$_GetCustomerResponse) _then)
-      : super(_value, (v) => _then(v as _$_GetCustomerResponse));
+      : super(_value, _then);
 
-  @override
-  _$_GetCustomerResponse get _value => super._value as _$_GetCustomerResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? customer = freezed,
-    Object? zones = freezed,
+    Object? customer = null,
+    Object? zones = null,
   }) {
     return _then(_$_GetCustomerResponse(
-      customer: customer == freezed
+      customer: null == customer
           ? _value.customer
           : customer // ignore: cast_nullable_to_non_nullable
               as Customer,
-      zones: zones == freezed
+      zones: null == zones
           ? _value._zones
           : zones // ignore: cast_nullable_to_non_nullable
               as List<Zone>,
@@ -139,6 +142,7 @@ class _$_GetCustomerResponse implements _GetCustomerResponse {
   @override
   @JsonKey(name: 'zones')
   List<Zone> get zones {
+    if (_zones is EqualUnmodifiableListView) return _zones;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_zones);
   }
@@ -153,26 +157,28 @@ class _$_GetCustomerResponse implements _GetCustomerResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_GetCustomerResponse &&
-            const DeepCollectionEquality().equals(other.customer, customer) &&
+            (identical(other.customer, customer) ||
+                other.customer == customer) &&
             const DeepCollectionEquality().equals(other._zones, _zones));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(customer),
-      const DeepCollectionEquality().hash(_zones));
+      runtimeType, customer, const DeepCollectionEquality().hash(_zones));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_GetCustomerResponseCopyWith<_$_GetCustomerResponse> get copyWith =>
       __$$_GetCustomerResponseCopyWithImpl<_$_GetCustomerResponse>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GetCustomerResponseToJson(this);
+    return _$$_GetCustomerResponseToJson(
+      this,
+    );
   }
 }
 

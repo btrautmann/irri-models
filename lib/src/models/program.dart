@@ -1,4 +1,4 @@
-import 'package:api_models/src/models/run.dart';
+import 'package:api_models/src/models/run_group.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'program.freezed.dart';
@@ -10,7 +10,7 @@ class Program with _$Program {
     @JsonKey(name: 'id') required int id,
     @JsonKey(name: 'name') required String name,
     @JsonKey(name: 'frequency') required List<int> frequency,
-    @JsonKey(name: 'runs') required List<Run> runs,
+    @JsonKey(name: 'run_groups') required List<RunGroup> runs,
   }) = _Program;
 
   factory Program.fromJson(Map<String, dynamic> json) =>

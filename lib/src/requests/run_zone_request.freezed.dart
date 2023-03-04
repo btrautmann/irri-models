@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'run_zone_request.dart';
 
@@ -35,36 +35,39 @@ mixin _$RunZoneRequest {
 abstract class $RunZoneRequestCopyWith<$Res> {
   factory $RunZoneRequestCopyWith(
           RunZoneRequest value, $Res Function(RunZoneRequest) then) =
-      _$RunZoneRequestCopyWithImpl<$Res>;
+      _$RunZoneRequestCopyWithImpl<$Res, RunZoneRequest>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'zone_id') int zoneId,
       @JsonKey(name: 'run_length_seconds') int runLengthSeconds});
 }
 
 /// @nodoc
-class _$RunZoneRequestCopyWithImpl<$Res>
+class _$RunZoneRequestCopyWithImpl<$Res, $Val extends RunZoneRequest>
     implements $RunZoneRequestCopyWith<$Res> {
   _$RunZoneRequestCopyWithImpl(this._value, this._then);
 
-  final RunZoneRequest _value;
   // ignore: unused_field
-  final $Res Function(RunZoneRequest) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? zoneId = freezed,
-    Object? runLengthSeconds = freezed,
+    Object? zoneId = null,
+    Object? runLengthSeconds = null,
   }) {
     return _then(_value.copyWith(
-      zoneId: zoneId == freezed
+      zoneId: null == zoneId
           ? _value.zoneId
           : zoneId // ignore: cast_nullable_to_non_nullable
               as int,
-      runLengthSeconds: runLengthSeconds == freezed
+      runLengthSeconds: null == runLengthSeconds
           ? _value.runLengthSeconds
           : runLengthSeconds // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 }
 
@@ -75,6 +78,7 @@ abstract class _$$_RunZoneRequestCopyWith<$Res>
           _$_RunZoneRequest value, $Res Function(_$_RunZoneRequest) then) =
       __$$_RunZoneRequestCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'zone_id') int zoneId,
       @JsonKey(name: 'run_length_seconds') int runLengthSeconds});
@@ -82,26 +86,24 @@ abstract class _$$_RunZoneRequestCopyWith<$Res>
 
 /// @nodoc
 class __$$_RunZoneRequestCopyWithImpl<$Res>
-    extends _$RunZoneRequestCopyWithImpl<$Res>
+    extends _$RunZoneRequestCopyWithImpl<$Res, _$_RunZoneRequest>
     implements _$$_RunZoneRequestCopyWith<$Res> {
   __$$_RunZoneRequestCopyWithImpl(
       _$_RunZoneRequest _value, $Res Function(_$_RunZoneRequest) _then)
-      : super(_value, (v) => _then(v as _$_RunZoneRequest));
+      : super(_value, _then);
 
-  @override
-  _$_RunZoneRequest get _value => super._value as _$_RunZoneRequest;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? zoneId = freezed,
-    Object? runLengthSeconds = freezed,
+    Object? zoneId = null,
+    Object? runLengthSeconds = null,
   }) {
     return _then(_$_RunZoneRequest(
-      zoneId: zoneId == freezed
+      zoneId: null == zoneId
           ? _value.zoneId
           : zoneId // ignore: cast_nullable_to_non_nullable
               as int,
-      runLengthSeconds: runLengthSeconds == freezed
+      runLengthSeconds: null == runLengthSeconds
           ? _value.runLengthSeconds
           : runLengthSeconds // ignore: cast_nullable_to_non_nullable
               as int,
@@ -136,26 +138,26 @@ class _$_RunZoneRequest implements _RunZoneRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_RunZoneRequest &&
-            const DeepCollectionEquality().equals(other.zoneId, zoneId) &&
-            const DeepCollectionEquality()
-                .equals(other.runLengthSeconds, runLengthSeconds));
+            (identical(other.zoneId, zoneId) || other.zoneId == zoneId) &&
+            (identical(other.runLengthSeconds, runLengthSeconds) ||
+                other.runLengthSeconds == runLengthSeconds));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(zoneId),
-      const DeepCollectionEquality().hash(runLengthSeconds));
+  int get hashCode => Object.hash(runtimeType, zoneId, runLengthSeconds);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_RunZoneRequestCopyWith<_$_RunZoneRequest> get copyWith =>
       __$$_RunZoneRequestCopyWithImpl<_$_RunZoneRequest>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RunZoneRequestToJson(this);
+    return _$$_RunZoneRequestToJson(
+      this,
+    );
   }
 }
 

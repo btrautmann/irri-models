@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'run.dart';
 
@@ -22,18 +22,12 @@ Run _$RunFromJson(Map<String, dynamic> json) {
 mixin _$Run {
   @JsonKey(name: 'id')
   int get id => throw _privateConstructorUsedError;
-  @JsonKey(name: 'program_id')
-  int get programId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'run_group_id')
+  int get runGroupId => throw _privateConstructorUsedError;
   @JsonKey(name: 'zone_id')
   int get zoneId => throw _privateConstructorUsedError;
-  @JsonKey(name: 'duration_seconds')
-  int get durationSeconds => throw _privateConstructorUsedError;
-  @JsonKey(name: 'start_hour')
-  int get startHour => throw _privateConstructorUsedError;
-  @JsonKey(name: 'start_minute')
-  int get startMinute => throw _privateConstructorUsedError;
   @JsonKey(name: 'last_run_time')
-  DateTime get lastRunTime => throw _privateConstructorUsedError;
+  DateTime? get lastRunTime => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -43,65 +37,50 @@ mixin _$Run {
 /// @nodoc
 abstract class $RunCopyWith<$Res> {
   factory $RunCopyWith(Run value, $Res Function(Run) then) =
-      _$RunCopyWithImpl<$Res>;
+      _$RunCopyWithImpl<$Res, Run>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'id') int id,
-      @JsonKey(name: 'program_id') int programId,
+      @JsonKey(name: 'run_group_id') int runGroupId,
       @JsonKey(name: 'zone_id') int zoneId,
-      @JsonKey(name: 'duration_seconds') int durationSeconds,
-      @JsonKey(name: 'start_hour') int startHour,
-      @JsonKey(name: 'start_minute') int startMinute,
-      @JsonKey(name: 'last_run_time') DateTime lastRunTime});
+      @JsonKey(name: 'last_run_time') DateTime? lastRunTime});
 }
 
 /// @nodoc
-class _$RunCopyWithImpl<$Res> implements $RunCopyWith<$Res> {
+class _$RunCopyWithImpl<$Res, $Val extends Run> implements $RunCopyWith<$Res> {
   _$RunCopyWithImpl(this._value, this._then);
 
-  final Run _value;
   // ignore: unused_field
-  final $Res Function(Run) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? programId = freezed,
-    Object? zoneId = freezed,
-    Object? durationSeconds = freezed,
-    Object? startHour = freezed,
-    Object? startMinute = freezed,
+    Object? id = null,
+    Object? runGroupId = null,
+    Object? zoneId = null,
     Object? lastRunTime = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      programId: programId == freezed
-          ? _value.programId
-          : programId // ignore: cast_nullable_to_non_nullable
+      runGroupId: null == runGroupId
+          ? _value.runGroupId
+          : runGroupId // ignore: cast_nullable_to_non_nullable
               as int,
-      zoneId: zoneId == freezed
+      zoneId: null == zoneId
           ? _value.zoneId
           : zoneId // ignore: cast_nullable_to_non_nullable
               as int,
-      durationSeconds: durationSeconds == freezed
-          ? _value.durationSeconds
-          : durationSeconds // ignore: cast_nullable_to_non_nullable
-              as int,
-      startHour: startHour == freezed
-          ? _value.startHour
-          : startHour // ignore: cast_nullable_to_non_nullable
-              as int,
-      startMinute: startMinute == freezed
-          ? _value.startMinute
-          : startMinute // ignore: cast_nullable_to_non_nullable
-              as int,
-      lastRunTime: lastRunTime == freezed
+      lastRunTime: freezed == lastRunTime
           ? _value.lastRunTime
           : lastRunTime // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-    ));
+              as DateTime?,
+    ) as $Val);
   }
 }
 
@@ -110,64 +89,45 @@ abstract class _$$_RunCopyWith<$Res> implements $RunCopyWith<$Res> {
   factory _$$_RunCopyWith(_$_Run value, $Res Function(_$_Run) then) =
       __$$_RunCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'id') int id,
-      @JsonKey(name: 'program_id') int programId,
+      @JsonKey(name: 'run_group_id') int runGroupId,
       @JsonKey(name: 'zone_id') int zoneId,
-      @JsonKey(name: 'duration_seconds') int durationSeconds,
-      @JsonKey(name: 'start_hour') int startHour,
-      @JsonKey(name: 'start_minute') int startMinute,
-      @JsonKey(name: 'last_run_time') DateTime lastRunTime});
+      @JsonKey(name: 'last_run_time') DateTime? lastRunTime});
 }
 
 /// @nodoc
-class __$$_RunCopyWithImpl<$Res> extends _$RunCopyWithImpl<$Res>
+class __$$_RunCopyWithImpl<$Res> extends _$RunCopyWithImpl<$Res, _$_Run>
     implements _$$_RunCopyWith<$Res> {
   __$$_RunCopyWithImpl(_$_Run _value, $Res Function(_$_Run) _then)
-      : super(_value, (v) => _then(v as _$_Run));
+      : super(_value, _then);
 
-  @override
-  _$_Run get _value => super._value as _$_Run;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? programId = freezed,
-    Object? zoneId = freezed,
-    Object? durationSeconds = freezed,
-    Object? startHour = freezed,
-    Object? startMinute = freezed,
+    Object? id = null,
+    Object? runGroupId = null,
+    Object? zoneId = null,
     Object? lastRunTime = freezed,
   }) {
     return _then(_$_Run(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      programId: programId == freezed
-          ? _value.programId
-          : programId // ignore: cast_nullable_to_non_nullable
+      runGroupId: null == runGroupId
+          ? _value.runGroupId
+          : runGroupId // ignore: cast_nullable_to_non_nullable
               as int,
-      zoneId: zoneId == freezed
+      zoneId: null == zoneId
           ? _value.zoneId
           : zoneId // ignore: cast_nullable_to_non_nullable
               as int,
-      durationSeconds: durationSeconds == freezed
-          ? _value.durationSeconds
-          : durationSeconds // ignore: cast_nullable_to_non_nullable
-              as int,
-      startHour: startHour == freezed
-          ? _value.startHour
-          : startHour // ignore: cast_nullable_to_non_nullable
-              as int,
-      startMinute: startMinute == freezed
-          ? _value.startMinute
-          : startMinute // ignore: cast_nullable_to_non_nullable
-              as int,
-      lastRunTime: lastRunTime == freezed
+      lastRunTime: freezed == lastRunTime
           ? _value.lastRunTime
           : lastRunTime // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
     ));
   }
 }
@@ -177,12 +137,9 @@ class __$$_RunCopyWithImpl<$Res> extends _$RunCopyWithImpl<$Res>
 class _$_Run implements _Run {
   _$_Run(
       {@JsonKey(name: 'id') required this.id,
-      @JsonKey(name: 'program_id') required this.programId,
+      @JsonKey(name: 'run_group_id') required this.runGroupId,
       @JsonKey(name: 'zone_id') required this.zoneId,
-      @JsonKey(name: 'duration_seconds') required this.durationSeconds,
-      @JsonKey(name: 'start_hour') required this.startHour,
-      @JsonKey(name: 'start_minute') required this.startMinute,
-      @JsonKey(name: 'last_run_time') required this.lastRunTime});
+      @JsonKey(name: 'last_run_time') this.lastRunTime});
 
   factory _$_Run.fromJson(Map<String, dynamic> json) => _$$_RunFromJson(json);
 
@@ -190,27 +147,18 @@ class _$_Run implements _Run {
   @JsonKey(name: 'id')
   final int id;
   @override
-  @JsonKey(name: 'program_id')
-  final int programId;
+  @JsonKey(name: 'run_group_id')
+  final int runGroupId;
   @override
   @JsonKey(name: 'zone_id')
   final int zoneId;
   @override
-  @JsonKey(name: 'duration_seconds')
-  final int durationSeconds;
-  @override
-  @JsonKey(name: 'start_hour')
-  final int startHour;
-  @override
-  @JsonKey(name: 'start_minute')
-  final int startMinute;
-  @override
   @JsonKey(name: 'last_run_time')
-  final DateTime lastRunTime;
+  final DateTime? lastRunTime;
 
   @override
   String toString() {
-    return 'Run(id: $id, programId: $programId, zoneId: $zoneId, durationSeconds: $durationSeconds, startHour: $startHour, startMinute: $startMinute, lastRunTime: $lastRunTime)';
+    return 'Run(id: $id, runGroupId: $runGroupId, zoneId: $zoneId, lastRunTime: $lastRunTime)';
   }
 
   @override
@@ -218,57 +166,39 @@ class _$_Run implements _Run {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Run &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.programId, programId) &&
-            const DeepCollectionEquality().equals(other.zoneId, zoneId) &&
-            const DeepCollectionEquality()
-                .equals(other.durationSeconds, durationSeconds) &&
-            const DeepCollectionEquality().equals(other.startHour, startHour) &&
-            const DeepCollectionEquality()
-                .equals(other.startMinute, startMinute) &&
-            const DeepCollectionEquality()
-                .equals(other.lastRunTime, lastRunTime));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.runGroupId, runGroupId) ||
+                other.runGroupId == runGroupId) &&
+            (identical(other.zoneId, zoneId) || other.zoneId == zoneId) &&
+            (identical(other.lastRunTime, lastRunTime) ||
+                other.lastRunTime == lastRunTime));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(programId),
-      const DeepCollectionEquality().hash(zoneId),
-      const DeepCollectionEquality().hash(durationSeconds),
-      const DeepCollectionEquality().hash(startHour),
-      const DeepCollectionEquality().hash(startMinute),
-      const DeepCollectionEquality().hash(lastRunTime));
+  int get hashCode =>
+      Object.hash(runtimeType, id, runGroupId, zoneId, lastRunTime);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_RunCopyWith<_$_Run> get copyWith =>
       __$$_RunCopyWithImpl<_$_Run>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RunToJson(this);
+    return _$$_RunToJson(
+      this,
+    );
   }
 }
 
 abstract class _Run implements Run {
   factory _Run(
-      {@JsonKey(name: 'id')
-          required final int id,
-      @JsonKey(name: 'program_id')
-          required final int programId,
-      @JsonKey(name: 'zone_id')
-          required final int zoneId,
-      @JsonKey(name: 'duration_seconds')
-          required final int durationSeconds,
-      @JsonKey(name: 'start_hour')
-          required final int startHour,
-      @JsonKey(name: 'start_minute')
-          required final int startMinute,
-      @JsonKey(name: 'last_run_time')
-          required final DateTime lastRunTime}) = _$_Run;
+      {@JsonKey(name: 'id') required final int id,
+      @JsonKey(name: 'run_group_id') required final int runGroupId,
+      @JsonKey(name: 'zone_id') required final int zoneId,
+      @JsonKey(name: 'last_run_time') final DateTime? lastRunTime}) = _$_Run;
 
   factory _Run.fromJson(Map<String, dynamic> json) = _$_Run.fromJson;
 
@@ -276,23 +206,14 @@ abstract class _Run implements Run {
   @JsonKey(name: 'id')
   int get id;
   @override
-  @JsonKey(name: 'program_id')
-  int get programId;
+  @JsonKey(name: 'run_group_id')
+  int get runGroupId;
   @override
   @JsonKey(name: 'zone_id')
   int get zoneId;
   @override
-  @JsonKey(name: 'duration_seconds')
-  int get durationSeconds;
-  @override
-  @JsonKey(name: 'start_hour')
-  int get startHour;
-  @override
-  @JsonKey(name: 'start_minute')
-  int get startMinute;
-  @override
   @JsonKey(name: 'last_run_time')
-  DateTime get lastRunTime;
+  DateTime? get lastRunTime;
   @override
   @JsonKey(ignore: true)
   _$$_RunCopyWith<_$_Run> get copyWith => throw _privateConstructorUsedError;
